@@ -72,9 +72,65 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.5);
     }
+    /* Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Global Loading Effect */
+    #loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #loader-wrapper.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-logo {
+      width: 80px;
+      height: auto;
+      animation: pulse 1.5s infinite ease-in-out;
+      margin-bottom: 20px;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    /* Typography Polish */
+    body {
+      font-family: 'Inter', 'Padauk', sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    p { line-height: 1.75; }
   </style>
 </head>
-<body class="antialiased">
+<body class="bg-background text-foreground selection:bg-primary/20 selection:text-primary">
+  <!-- Page Loader -->
+  <div id="loader-wrapper">
+    <img src="./img/Mr Linuxer Logo..png" alt="Loading..." class="loader-logo">
+    <div class="w-48 h-1 bg-secondary rounded-full overflow-hidden">
+      <div class="h-full bg-primary animate-[marquee_2s_linear_infinite] w-1/2 rounded-full"></div>
+    </div>
+  </div>
 
   <!-- Header (Exact Match with Home Page) -->
  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
@@ -113,12 +169,12 @@
       <!-- Mobile Navigation -->
       <div id="mobileMenu" class="mobile-menu md:hidden">
         <nav class="flex flex-col gap-2 py-4 border-t border-border">
-          <a href="./index.html" class="px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
-          <a href="./about.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
-          <a href="./services.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Services</a>
-          <a href="./news.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
-          <a href="./blog.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
-          <a href="./contact.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Contact</a>
+          <a href="index.html" class="px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
+          <a href="about.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
+          <a href="services.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Services</a>
+          <a href="news.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
+          <a href="blog.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
+          <a href="contact.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Contact</a>
 
           <div class="px-4 pt-2 border-t border-border mt-2">
             <a href="contact.html" class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
@@ -132,7 +188,7 @@
   </header>
 
   <!-- About Hero Section (Grand & Majestic) -->
-  <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-foreground text-background overflow-hidden hero-pattern">
+  <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-foreground text-background overflow-hidden hero-pattern reveal">
     <!-- Decorative Grid -->
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 40px 40px;"></div>
     
@@ -284,7 +340,7 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <!-- Brand Column -->
         <div class="col-span-2 md:col-span-1">
-          <a href="./index.html" class="flex items-center gap-2">
+          <a href="index.html" class="flex items-center gap-2">
           <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
         </a>
           <p class="mt-5 text-sm text-background/70 mb-6 leading-relaxed">
@@ -301,12 +357,12 @@
         <div>
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Quick Links</h3>
           <ul class="space-y-3">
-            <li><a href="./index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a></li>
-            <li><a href="./about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About Us</a></li>
-            <li><a href="./services.html" class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
-            <li><a href="./news.html" class="text-sm text-background/70 hover:text-primary transition-colors">News</a></li>
-            <li><a href="./blog.html" class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a></li>
-            <li><a href="./contact.html" class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
+            <li><a href="index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="services.html" class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
+            <li><a href="news.html" class="text-sm text-background/70 hover:text-primary transition-colors">News</a></li>
+            <li><a href="blog.html" class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a></li>
+            <li><a href="contact.html" class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
           </ul>
         </div>
 
@@ -368,8 +424,30 @@
 
   <!-- JavaScript -->
   <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    // Global Loader
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader-wrapper');
+      if (loader) {
+        setTimeout(() => {
+          loader.classList.add('fade-out');
+        }, 500);
+      }
+    });
+
+    // Scroll Reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+      
+      lucide.createIcons();
 
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -394,8 +472,9 @@
       }
     });
 
-    // Set current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+      const yearEl = document.getElementById('currentYear');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
   </script>
 </body>
 </html>

@@ -108,8 +108,15 @@
 
         /* Floating Animation */
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .animate-float {
@@ -251,7 +258,8 @@
             </h1>
 
             <p class="max-w-3xl mx-auto text-lg sm:text-xl text-background/70 leading-relaxed font-light">
-                Discover in-depth articles, tutorials, and thought leadership on cybersecurity, software engineering, and the future of IT.
+                Discover in-depth articles, tutorials, and thought leadership on cybersecurity, software engineering,
+                and the future of IT.
             </p>
         </div>
     </section>
@@ -594,8 +602,8 @@
                     <h3 class="text-2xl sm:text-3xl font-bold mb-8 border-l-[6px] border-primary pl-5 text-foreground">ဆက်စပ်ဆောင်းပါးများ</h3>
                     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     ${otherPosts.map(p => {
-                        const excerpt = String(p.detail).length > 80 ? String(p.detail).substring(0, 80) + '...' : p.detail;
-                        return `
+                    const excerpt = String(p.detail).length > 80 ? String(p.detail).substring(0, 80) + '...' : p.detail;
+                    return `
                             <article class="bg-background rounded-2xl border border-border overflow-hidden hover:border-primary/30 transition-all cursor-pointer shadow-sm hover:shadow-md flex flex-col group" onclick="openBlogDetail(${p.id})">
                                 <div class="aspect-video overflow-hidden bg-primary/5">
                                     ${p.images.length > 0 ? `<img src="${p.images[0]}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` : ''}
@@ -606,7 +614,7 @@
                                 </div>
                             </article>
                         `;
-                    }).join('')}
+                }).join('')}
                     </div>
                 </div>
                 `;

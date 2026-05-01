@@ -112,6 +112,56 @@
       animation: blink 1s step-end infinite;
     }
     
+    /* Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Global Loading Effect */
+    #loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #loader-wrapper.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-logo {
+      width: 80px;
+      height: auto;
+      animation: pulse 1.5s infinite ease-in-out;
+      margin-bottom: 20px;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    /* Typography Polish */
+    body {
+      font-family: 'Inter', 'Padauk', sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    p { line-height: 1.75; }
+
     /* Smooth scrolling */
     html {
       scroll-behavior: smooth;
@@ -125,7 +175,7 @@
     }
     
     .mobile-menu.open {
-      max-height: 400px;
+      max-height: 500px;
     }
 
     /* Myanmar Text Justification Fixes */
@@ -179,7 +229,14 @@
     }
   </style>
 </head>
-<body class="antialiased">
+<body class="bg-background text-foreground selection:bg-primary/20 selection:text-primary">
+  <!-- Page Loader -->
+  <div id="loader-wrapper">
+    <img src="./img/Mr Linuxer Logo..png" alt="Loading..." class="loader-logo">
+    <div class="w-48 h-1 bg-secondary rounded-full overflow-hidden">
+      <div class="h-full bg-primary animate-[marquee_2s_linear_infinite] w-1/2 rounded-full"></div>
+    </div>
+  </div>
 
   <!-- Header -->
   <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
@@ -218,12 +275,12 @@
       <!-- Mobile Navigation -->
       <div id="mobileMenu" class="mobile-menu md:hidden">
         <nav class="flex flex-col gap-2 py-4 border-t border-border">
-          <a href="./index.html" class="px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
-          <a href="./about.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
-          <a href="./services.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Services</a>
-          <a href="./news.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
-          <a href="./blog.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
-          <a href="./contact.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Contact</a>
+          <a href="index.html" class="px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
+          <a href="about.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
+          <a href="services.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Services</a>
+          <a href="news.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
+          <a href="blog.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
+          <a href="contact.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Contact</a>
 
           <div class="px-4 pt-2 border-t border-border mt-2">
             <a href="contact.html" class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
@@ -237,7 +294,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-background reveal">
     <!-- Background Elements -->
     <div class="absolute inset-0 grid-pattern"></div>
     <div class="absolute inset-0 gradient-radial"></div>
@@ -363,7 +420,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="relative py-24 bg-secondary">
+  <section id="about" class="relative py-24 bg-secondary reveal">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Left Content -->
@@ -541,7 +598,7 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="relative py-24 bg-background">
+  <section id="services" class="relative py-24 bg-background reveal">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -734,7 +791,7 @@
   </section>
 
   <!-- News Section -->
-  <section id="news" class="relative py-24 bg-secondary">
+  <section id="news" class="relative py-24 bg-secondary reveal">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -762,7 +819,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="relative py-24 bg-background">
+  <section id="contact" class="relative py-24 bg-background reveal">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -862,12 +919,12 @@
   </section>
 
   <!-- Footer -->
-  <footer class="relative bg-foreground border-t border-border">
+  <footer class="relative bg-foreground border-t border-border reveal">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <!-- Brand Column -->
         <div class="col-span-2 md:col-span-1">
-          <a href="./index.html" class="flex items-center gap-2">
+          <a href="index.html" class="flex items-center gap-2">
           <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
         </a>
           <p class="mt-5 text-sm text-background/70 mb-6 leading-relaxed">
@@ -884,12 +941,12 @@
         <div>
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Quick Links</h3>
           <ul class="space-y-3">
-            <li><a href="./index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a></li>
-            <li><a href="./about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About Us</a></li>
-            <li><a href="./services.html" class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
-            <li><a href="./news.html" class="text-sm text-background/70 hover:text-primary transition-colors">News</a></li>
-            <li><a href="./blog.html" class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a></li>
-            <li><a href="./contact.html" class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
+            <li><a href="index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="services.html" class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
+            <li><a href="news.html" class="text-sm text-background/70 hover:text-primary transition-colors">News</a></li>
+            <li><a href="blog.html" class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a></li>
+            <li><a href="contact.html" class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
           </ul>
         </div>
 
@@ -957,91 +1014,87 @@
 
   <!-- JavaScript -->
   <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
-
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuIcon = document.getElementById('menuIcon');
-    let isMenuOpen = false;
-
-    mobileMenuBtn.addEventListener('click', () => {
-      isMenuOpen = !isMenuOpen;
-      mobileMenu.classList.toggle('open');
-      menuIcon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
-      lucide.createIcons();
-    });
-
-    // Close mobile menu when clicking a link
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        isMenuOpen = false;
-        mobileMenu.classList.remove('open');
-        menuIcon.setAttribute('data-lucide', 'menu');
-        lucide.createIcons();
-      });
-    });
-
-    // Header scroll effect
-    const header = document.getElementById('header');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      
-      if (currentScroll > 100) {
-        header.classList.add('shadow-md');
-      } else {
-        header.classList.remove('shadow-md');
+    // Global Loader
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader-wrapper');
+      if (loader) {
+        setTimeout(() => {
+          loader.classList.add('fade-out');
+        }, 500); // Small delay for smoothness
       }
-      
-      lastScroll = currentScroll;
     });
 
-    // Animated counter
-    function animateCounter(element, target) {
-      let current = 0;
-      const increment = target / 50;
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          element.textContent = target + '+';
-          clearInterval(timer);
-        } else {
-          element.textContent = Math.floor(current);
-        }
-      }, 30);
-    }
-
-    // Intersection Observer for counter animation
-    const counterElements = document.querySelectorAll('[data-count]');
-    const counterObserver = new IntersectionObserver((entries) => {
+    // Scroll Reveal Intersection Observer
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const target = parseInt(entry.target.getAttribute('data-count'));
-          animateCounter(entry.target, target);
-          counterObserver.unobserve(entry.target);
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target); // Trigger only once
         }
       });
-    }, { threshold: 0.5 });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
 
-    counterElements.forEach(el => counterObserver.observe(el));
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+      
+      // Initialize Lucide Icons
+      lucide.createIcons();
 
-    // Set current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+      let isMenuOpen = false;
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+      mobileMenuBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle('open');
+        menuIcon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+        lucide.createIcons();
+      });
+
+      // Close mobile menu when clicking a link
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          isMenuOpen = false;
+          mobileMenu.classList.remove('open');
+          menuIcon.setAttribute('data-lucide', 'menu');
+          lucide.createIcons();
+        });
+      });
+
+      // Header scroll effect
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 50) {
+          header.classList.add('shadow-md', 'bg-background/95', 'backdrop-blur-md');
+        } else {
+          header.classList.remove('shadow-md', 'bg-background/95', 'backdrop-blur-md');
         }
+      });
+
+      // Set current year in footer
+      const yearEl = document.getElementById('currentYear');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Smooth scroll for internal anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
       });
     });
 

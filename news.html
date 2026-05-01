@@ -126,10 +126,66 @@
         .animate-float-delayed {
             animation: float 4s ease-in-out infinite 2s;
         }
+    /* Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Global Loading Effect */
+    #loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #loader-wrapper.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-logo {
+      width: 80px;
+      height: auto;
+      animation: pulse 1.5s infinite ease-in-out;
+      margin-bottom: 20px;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    /* Typography Polish */
+    body {
+      font-family: 'Inter', 'Padauk', sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    p { line-height: 1.75; }
     </style>
 </head>
 
-<body class="antialiased">
+<body class="bg-background text-foreground selection:bg-primary/20 selection:text-primary">
+  <!-- Page Loader -->
+  <div id="loader-wrapper">
+    <img src="./img/Mr Linuxer Logo..png" alt="Loading..." class="loader-logo">
+    <div class="w-48 h-1 bg-secondary rounded-full overflow-hidden">
+      <div class="h-full bg-primary animate-[marquee_2s_linear_infinite] w-1/2 rounded-full"></div>
+    </div>
+  </div>
 
     <!-- Header -->
     <header id="header"
@@ -202,7 +258,7 @@
     </header>
 
     <!-- News Hero Section (Grand & Majestic) -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-foreground text-background overflow-hidden hero-pattern">
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-foreground text-background overflow-hidden hero-pattern reveal">
         <!-- Decorative Grid -->
         <div class="absolute inset-0 opacity-[0.03]"
             style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 40px 40px;">
@@ -671,7 +727,54 @@
             document.body.style.overflow = '';
         }
 
-        document.addEventListener('DOMContentLoaded', fetchLatestNews);
+        // Global Loader
+        window.addEventListener('load', () => {
+          const loader = document.getElementById('loader-wrapper');
+          if (loader) {
+            setTimeout(() => {
+              loader.classList.add('fade-out');
+            }, 500);
+          }
+        });
+
+        // Scroll Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+            
+            fetchLatestNews();
+            
+            lucide.createIcons();
+
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+            let isMenuOpen = false;
+
+            mobileMenuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.classList.toggle('open');
+                menuIcon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+                lucide.createIcons();
+            });
+
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('header');
+                if (window.pageYOffset > 50) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+        });
     </script>
 </body>
 
