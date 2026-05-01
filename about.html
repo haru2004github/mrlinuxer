@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7SVY5C21T"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Y7SVY5C21T');
+  </script>
   <title>About Us | Mr.Linuxer - Our Mission & Team</title>
   <meta name="description" content="Learn about Mr.Linuxer's mission to secure the digital future. Meet our team of experts in cybersecurity, web development, and AI solutions in Myanmar.">
   <meta name="keywords" content="about Mr.Linuxer, cybersecurity team Myanmar, IT experts Myanmar, tech company Nay Pyi Taw">
@@ -70,24 +79,10 @@
     
     /* Mobile menu transition */
     .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-    .mobile-menu.open { max-height: 400px; }
-
-    /* Text Justification */
-    .text-justify-my { text-align: justify; text-justify: inter-word; word-break: break-word; hyphens: auto; }
-
-    /* Grand Hero Background */
-    .hero-pattern {
-      background-image: radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.1) 0, transparent 50%), 
-                        radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.05) 0, transparent 50%);
+    .mobile-menu.open {
+      max-height: 400px;
     }
-    
-    /* Glassmorphism Card */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-    }
+
     /* Scroll Reveal Animation */
     .reveal {
       opacity: 0;
@@ -95,6 +90,7 @@
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       will-change: opacity, transform;
     }
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
@@ -115,19 +111,48 @@
       z-index: 9999;
       transition: opacity 0.6s ease, visibility 0.6s ease;
     }
+
     #loader-wrapper.fade-out {
       opacity: 0;
       visibility: hidden;
     }
+
     .loader-logo {
       width: 80px;
       height: auto;
       animation: pulse 1.5s infinite ease-in-out;
       margin-bottom: 20px;
     }
+
     @keyframes pulse {
-      0%, 100% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.05); opacity: 1; }
+
+      0%,
+      100% {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+    }
+
+    /* Text Justification */
+    .text-justify-my { text-align: justify; text-justify: inter-word; word-break: break-word; hyphens: auto; }
+
+    /* Grand Hero Background */
+    .hero-pattern {
+      background-image: radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.1) 0, transparent 50%), 
+                        radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.05) 0, transparent 50%);
+    }
+    
+    /* Glassmorphism Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     /* Typography Polish */
@@ -244,7 +269,6 @@
             <p class="text-xl text-foreground font-medium mb-6">
               Founded in 2014, <strong class="text-primary">Mr.Linuxer</strong> has rapidly evolved from a passionate startup into a leading force in Myanmar's IT landscape.
             </p>
-            <!-- ဤနေရာတွင် ပုံထဲမှ Company Overview စာသားများကို အစားထိုးထည့်သွင်းပါ -->
             <p>
               Our journey began with a simple yet profound mission: to protect and empower businesses through highly reliable, innovative, and secure technology solutions. We believe in building digital environments where businesses can thrive without the fear of cyber threats.
             </p>
@@ -278,7 +302,6 @@
         <div class="lg:col-span-5 relative">
           <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-            <!-- သင်၏ ရုံးခန်း (သို့) Team ပုံကို ဤနေရာတွင် အစားထိုးပါ -->
             <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80" alt="Mr.Linuxer Team" class="w-full h-full object-cover">
             
             <div class="absolute bottom-8 left-8 right-8 z-20">
@@ -305,7 +328,7 @@
       <div class="grid md:grid-cols-2 gap-10">
         
         <!-- Our Mission -->
-        <div class="group bg-card rounded-3xl p-10 sm:p-14 border border-border shadow-sm hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+        <div class="group bg-card rounded-3xl p-10 sm:p-14 border border-border shadow-sm hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden reveal">
           <div class="absolute right-0 top-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors duration-500"></div>
           
           <div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500 group-hover:rotate-6">
@@ -313,14 +336,13 @@
           </div>
           
           <h3 class="text-3xl sm:text-4xl font-black text-foreground mb-6">Our Mission</h3>
-          <!-- ဤနေရာတွင် ပုံထဲမှ Mission စာသားများကို အစားထိုးထည့်သွင်းပါ -->
           <p class="text-lg text-muted-foreground leading-relaxed text-justify-my">
             To empower organizations with uncompromising cybersecurity and cutting-edge digital solutions. We strive to create secure, reliable, and intelligent digital ecosystems that drive business growth and protect against ever-evolving modern threats.
           </p>
         </div>
 
         <!-- Our Vision -->
-        <div class="group bg-card rounded-3xl p-10 sm:p-14 border border-border shadow-sm hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+        <div class="group bg-card rounded-3xl p-10 sm:p-14 border border-border shadow-sm hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden reveal">
           <div class="absolute right-0 top-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors duration-500"></div>
           
           <div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500 group-hover:-rotate-6">
@@ -328,7 +350,6 @@
           </div>
           
           <h3 class="text-3xl sm:text-4xl font-black text-foreground mb-6">Our Vision</h3>
-          <!-- ဤနေရာတွင် ပုံထဲမှ Vision စာသားများကို အစားထိုးထည့်သွင်းပါ -->
           <p class="text-lg text-muted-foreground leading-relaxed text-justify-my">
             To be the most trusted and universally recognized technology partner in the region, setting the gold standard for IT management, cybersecurity excellence, and digital transformation through our unwavering commitment to the 5S philosophy.
           </p>
@@ -340,7 +361,7 @@
 
   <!-- CTA Section -->
   <section class="py-24 bg-background relative overflow-hidden text-center">
-    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10 reveal">
       <h2 class="text-3xl sm:text-5xl font-black text-foreground mb-8">Ready to Secure Your Business?</h2>
       <p class="text-xl text-muted-foreground mb-10">Let's collaborate to build a resilient and innovative digital infrastructure.</p>
       <a href="contact.html" class="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground text-lg font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-1">
@@ -430,7 +451,7 @@
           </p>
           <div class="flex items-center gap-6 text-sm text-background/70">
             <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+            <a href="#" class="hover:text-service transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
@@ -440,53 +461,51 @@
 
   <!-- JavaScript -->
   <script>
-    // Global Loader
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loader-wrapper');
-      if (loader) {
-        setTimeout(() => {
-          loader.classList.add('fade-out');
-        }, 500);
-      }
-    });
-
-    // Scroll Reveal
+    // Scroll Reveal Logic
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          revealObserver.unobserve(entry.target);
+          revealObserver.unobserve(entry.target); // Trigger only once
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.1 });
+
+    // Page Loader Logic
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader-wrapper');
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+        // Start observing after loader is gone
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+      }, 800);
+    });
 
     document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-      
       lucide.createIcons();
 
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuIcon = document.getElementById('menuIcon');
-    let isMenuOpen = false;
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+      let isMenuOpen = false;
 
-    mobileMenuBtn.addEventListener('click', () => {
-      isMenuOpen = !isMenuOpen;
-      mobileMenu.classList.toggle('open');
-      menuIcon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
-      lucide.createIcons();
-    });
+      mobileMenuBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle('open');
+        menuIcon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+        lucide.createIcons();
+      });
 
-    // Header scroll effect
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 50) {
-        header.classList.add('shadow-md');
-      } else {
-        header.classList.remove('shadow-md');
-      }
-    });
+      // Header scroll effect
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 50) {
+          header.classList.add('shadow-md');
+        } else {
+          header.classList.remove('shadow-md');
+        }
+      });
 
       const yearEl = document.getElementById('currentYear');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
