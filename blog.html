@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mr.Linuxer Blog - Expert insights on cybersecurity, AI, and modern IT solutions. Stay ahead of the digital curve.">
+    <meta name="keywords" content="blog, cybersecurity, IT, Myanmar, AI, development, Mr.Linuxer">
+    <meta name="author" content="Mr.Linuxer">
+    <meta name="theme-color" content="#fafafa">
+    <title>Blogs | Mr.Linuxer - Knowledge & Insights</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="./img/Mr Linuxer Logo..png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#fafafa',
+                        foreground: '#171717',
+                        card: '#ffffff',
+                        'card-foreground': '#171717',
+                        primary: '#dc2626',
+                        'primary-foreground': '#fafafa',
+                        secondary: '#f5f5f5',
+                        'secondary-foreground': '#171717',
+                        muted: '#f0f0f0',
+                        'muted-foreground': '#737373',
+                        accent: '#dc2626',
+                        'accent-foreground': '#fafafa',
+                        border: '#e5e5e5',
+                        input: '#f5f5f5',
+                        ring: '#dc2626',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Padauk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafafa;
+            color: #171717;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Myanmar Text Justification */
+        .text-justify-my {
+            text-align: justify;
+            text-justify: inter-word;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        /* Mobile menu transition */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.open {
+            max-height: 400px;
+        }
+
+        /* Loading Spinner */
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+
+        /* Grand Hero Background */
+        .hero-pattern {
+            background-image: radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.1) 0, transparent 50%),
+                radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.05) 0, transparent 50%);
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float 4s ease-in-out infinite 2s;
+        }
+
+        /* Blog Card Glassmorphism & Hover */
+        .blog-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 229, 229, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.15);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        .blog-image-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(23, 23, 23, 0.6));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .blog-card:hover .blog-image-container::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2">
+                    <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo"
+                        class="h-10 sm:h-12 w-auto object-contain">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="index.html"
+                        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Home</a>
+                    <a href="about.html"
+                        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">About</a>
+                    <a href="services.html"
+                        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Services</a>
+                    <a href="news.html"
+                        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">News</a>
+                    <a href="blog.html" class="text-sm font-medium text-primary transition-colors">Blogs</a>
+                    <a href="contact.html"
+                        class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Contact</a>
+                </nav>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center gap-4">
+                    <a href="contact.html"
+                        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
+                        Get Started
+                        <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn"
+                        class="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors">
+                        <i data-lucide="menu" class="h-6 w-6" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <nav class="flex flex-col gap-2 py-4 border-t border-border">
+                    <a href="index.html"
+                        class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
+                    <a href="about.html"
+                        class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
+                    <a href="services.html"
+                        class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Services</a>
+                    <a href="news.html"
+                        class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
+                    <a href="blog.html"
+                        class="px-4 py-2 text-sm font-medium text-primary hover:bg-secondary rounded-lg transition-colors">Blogs</a>
+                    <a href="contact.html"
+                        class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Contact</a>
+
+                    <div class="px-4 pt-2 border-t border-border mt-2">
+                        <a href="contact.html"
+                            class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
+                            Get Started
+                            <i data-lucide="arrow-right" class="h-4 w-4"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-foreground text-background overflow-hidden hero-pattern">
+        <!-- Decorative Grid -->
+        <div class="absolute inset-0 opacity-[0.03]"
+            style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 40px 40px;">
+        </div>
+
+        <!-- Floating Icons -->
+        <div class="absolute top-1/4 left-1/4 text-primary/20 animate-float hidden lg:block">
+            <i data-lucide="book-open" class="h-16 w-16"></i>
+        </div>
+        <div class="absolute bottom-1/3 right-1/4 text-primary/15 animate-float-delayed hidden lg:block">
+            <i data-lucide="sparkles" class="h-12 w-12"></i>
+        </div>
+
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-8 backdrop-blur-sm">
+                <i data-lucide="pen-tool" class="h-4 w-4 text-primary"></i>
+                <span class="text-sm font-bold tracking-widest uppercase text-primary-foreground">Expert Knowledge &
+                    Insights</span>
+            </div>
+
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-black mb-8 leading-tight tracking-tight text-balance">
+                The <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">Mr.Linuxer
+                    Journal</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-lg sm:text-xl text-background/70 leading-relaxed font-light">
+                Discover in-depth articles, tutorials, and thought leadership on cybersecurity, software engineering, and the future of IT.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Grid Section -->
+    <section class="py-16 bg-secondary/30 min-h-[600px]">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <!-- Blog Grid -->
+            <div id="blog-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Loading Indicator -->
+                <div class="col-span-full flex flex-col items-center justify-center py-24 text-muted-foreground">
+                    <i data-lucide="loader-2" class="h-10 w-10 animate-spin text-primary mb-4"></i>
+                    <p class="text-lg">ဆောင်းပါးများ ရယူနေပါသည်...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative bg-foreground border-t border-border">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Brand Column -->
+                <div class="col-span-2 md:col-span-1">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo"
+                            class="h-10 sm:h-12 w-auto object-contain">
+                    </a>
+                    <p class="mt-5 text-sm text-background/70 mb-6 leading-relaxed">
+                        Driven by Code, Powered by Teamwork. Your trusted partner for cybersecurity and IT solutions.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer"
+                            class="w-10 h-10 rounded-lg bg-background/10 border border-background/20 flex items-center justify-center text-background/70 hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors"
+                            aria-label="Facebook">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html"
+                                class="text-sm text-background/70 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="about.html"
+                                class="text-sm text-background/70 hover:text-primary transition-colors">About Us</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="text-sm text-background/70 hover:text-primary transition-colors">Services</a>
+                        </li>
+                        <li><a href="news.html"
+                                class="text-sm text-background/70 hover:text-primary transition-colors">News</a></li>
+                        <li><a href="blog.html"
+                                class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a></li>
+                        <li><a href="contact.html"
+                                class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Services</h3>
+                    <ul class="space-y-3">
+                        <li><span
+                                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Web
+                                Development</span></li>
+                        <li><span
+                                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Mobile
+                                Apps</span></li>
+                        <li><span
+                                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Cybersecurity</span>
+                        </li>
+                        <li><span
+                                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">AI
+                                Solutions</span></li>
+                        <li><span
+                                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Consulting</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Contact</h3>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="mailto:hello@mrlinuxer.net"
+                                class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
+                                <i data-lucide="mail" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
+                                <span>hello@mrlinuxer.net</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+959260438525"
+                                class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
+                                <i data-lucide="phone" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
+                                <span>+(95) 9260438525</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="flex items-start gap-3 text-sm text-background/70">
+                                <i data-lucide="map-pin" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
+                                <span>Nay Pyi Taw, Myanmar</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-background/20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p class="text-sm text-background/70">
+                        &copy; <span id="currentYear"></span> Mr.Linuxer. All rights reserved.
+                    </p>
+                    <div class="flex items-center gap-6 text-sm text-background/70">
+                        <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Blog Detail Modal Overlay -->
+    <div id="blogDetailModal" class="fixed inset-0 z-[100] bg-background overflow-y-auto hidden">
+        <div id="blogDetailContent" class="min-h-screen bg-background">
+            <!-- Content will be injected here via JS -->
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            mobileMenu.classList.toggle('open');
+            menuIcon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Store fetched data globally
+        let globalBlogData = [];
+
+        // Fetch Data from Google Sheets (Same as News)
+        async function fetchBlogPosts() {
+            const sheetId = '1FprMM_WcAz9_495HE2Nu1xI64Ymz-NKc9HK2PMAlBBQ';
+            const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+
+            try {
+                const response = await fetch(url);
+                const text = await response.text();
+                const jsonString = text.match(/google\.visualization\.Query\.setResponse\(([\s\S\w]+)\);/)[1];
+                const data = JSON.parse(jsonString);
+
+                const cols = data.table.cols;
+                const rows = data.table.rows;
+
+                let headers = [];
+                if (cols.some(c => c && c.label)) {
+                    headers = cols.map(c => c ? c.label.toLowerCase() : '');
+                } else if (rows.length > 0) {
+                    headers = rows[0].c.map(cell => cell && cell.v ? String(cell.v).toLowerCase() : '');
+                    rows.shift();
+                }
+
+                let titleIdx = -1, detailIdx = -1, imageIdx = -1;
+                headers.forEach((label, idx) => {
+                    if (!label) return;
+                    if (titleIdx === -1 && (label.includes('title') || label.includes('ခေါင်းစဉ်'))) titleIdx = idx;
+                    else if (detailIdx === -1 && (label.includes('detail') || label.includes('description') || label.includes('content') || label.includes('အကြောင်းအရာ'))) detailIdx = idx;
+                    else if (imageIdx === -1 && (label.includes('photo') || label.includes('image') || label.includes('cover'))) imageIdx = idx;
+                });
+
+                if (titleIdx === -1) titleIdx = 2;
+                if (detailIdx === -1) detailIdx = 3;
+                if (imageIdx === -1) imageIdx = 5;
+
+                const validRows = rows.filter(row => row && row.c && row.c[titleIdx]);
+                const blogRows = validRows.reverse();
+
+                const blogContainer = document.getElementById('blog-container');
+                blogContainer.innerHTML = '';
+
+                if (blogRows.length === 0) {
+                    blogContainer.innerHTML = `<div class="col-span-full text-center text-muted-foreground py-24">လက်ရှိတွင် ဆောင်းပါးများ မရှိသေးပါ။</div>`;
+                    return;
+                }
+
+                globalBlogData = blogRows.map((row, index) => {
+                    const title = row.c[titleIdx]?.v || 'Untitled';
+                    const detail = row.c[detailIdx]?.v || '';
+                    let rawCoverPhoto = row.c[imageIdx]?.v || '';
+                    let coverPhotos = [];
+                    if (rawCoverPhoto) {
+                        coverPhotos = String(rawCoverPhoto).split(/[\s,]+/).filter(url => url.startsWith('http'));
+                    }
+
+                    let dateCell = row.c[3];
+                    let postDate = '';
+                    if (dateCell && dateCell.f) postDate = dateCell.f;
+                    else if (dateCell && dateCell.v) postDate = String(dateCell.v);
+
+                    let dynamicSections = [];
+                    headers.forEach((label, idx) => {
+                        if (idx === titleIdx || idx === detailIdx || idx === imageIdx || idx <= 3) return;
+                        let cellValue = row.c[idx]?.v;
+                        if (!cellValue) return;
+                        let strValue = String(cellValue);
+                        if (strValue.trim().startsWith('http')) {
+                            const urls = strValue.split(/[\s,]+/).filter(u => u.startsWith('http'));
+                            if (urls.length > 0) dynamicSections.push({ type: 'images', urls: urls });
+                        } else if (strValue.length > 0 && strValue.length < 80) {
+                            dynamicSections.push({ type: 'heading', text: strValue });
+                        } else {
+                            dynamicSections.push({ type: 'paragraph', text: strValue });
+                        }
+                    });
+
+                    return { id: index, title, detail, date: postDate, images: coverPhotos, dynamicSections };
+                });
+
+                globalBlogData.forEach(post => {
+                    const excerpt = String(post.detail).length > 120 ? String(post.detail).substring(0, 120) + '...' : post.detail;
+                    const imageHtml = post.images.length > 0
+                        ? `<img src="${post.images[0]}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">`
+                        : `<div class="w-full h-full flex items-center justify-center bg-primary/5"><i data-lucide="book" class="h-12 w-12 text-primary/40"></i></div>`;
+
+                    // Majestic Blog Card Design
+                    const card = `
+                        <article class="blog-card group rounded-3xl overflow-hidden flex flex-col cursor-pointer" onclick="openBlogDetail(${post.id})">
+                            <div class="blog-image-container relative aspect-[4/3] overflow-hidden">
+                                ${imageHtml}
+                                <div class="absolute top-4 left-4 z-20">
+                                    <span class="px-3 py-1 bg-primary text-white text-[10px] font-bold uppercase tracking-widest rounded-full shadow-lg">Insight</span>
+                                </div>
+                            </div>
+                            <div class="p-8 flex flex-col flex-grow relative">
+                                <div class="flex items-center gap-3 mb-4 text-xs font-semibold text-muted-foreground">
+                                    <i data-lucide="calendar" class="h-3.5 w-3.5"></i>
+                                    <span>${post.date || 'Knowledge'}</span>
+                                    <span class="w-1 h-1 rounded-full bg-border"></span>
+                                    <span>5 min read</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors line-clamp-2 leading-tight">
+                                    ${post.title.trim()}
+                                </h3>
+                                <p class="text-sm text-muted-foreground mb-6 line-clamp-3 flex-grow text-justify-my leading-relaxed">
+                                    ${excerpt.trim()}
+                                </p>
+                                <div class="pt-6 border-t border-border/50 mt-auto flex items-center justify-between">
+                                    <div class="flex items-center gap-2 text-sm font-bold text-primary group/btn">
+                                        Read Article
+                                        <i data-lucide="arrow-right" class="h-4 w-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                                    </div>
+                                    <div class="flex -space-x-2">
+                                        <div class="w-8 h-8 rounded-full border-2 border-white bg-secondary flex items-center justify-center overflow-hidden">
+                                            <img src="./img/Mr Linuxer Logo..png" class="w-5 h-5 object-contain">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    `;
+                    blogContainer.innerHTML += card;
+                });
+
+                lucide.createIcons();
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('blog-container').innerHTML = `<div class="col-span-full text-center py-24"><p class="text-muted-foreground">ဒေတာရယူရာတွင် အခက်အခဲရှိနေပါသည်။</p></div>`;
+            }
+        }
+
+        function openBlogDetail(id) {
+            const post = globalBlogData[id];
+            if (!post) return;
+
+            let heroImageHtml = post.images && post.images.length > 0 ? `
+                <div class="mb-12 rounded-[2rem] overflow-hidden shadow-2xl border border-border aspect-video">
+                    <img src="${post.images[0]}" alt="${post.title}" class="w-full h-full object-cover">
+                </div>
+            ` : '';
+
+            let dynamicSectionsHtml = '';
+            if (post.dynamicSections && post.dynamicSections.length > 0) {
+                dynamicSectionsHtml = `<div class="mt-12 space-y-12 border-t border-border pt-12">`;
+                post.dynamicSections.forEach(sec => {
+                    if (sec.type === 'heading') {
+                        dynamicSectionsHtml += `<h3 class="text-2xl sm:text-3xl font-bold text-foreground mt-8 mb-6 border-l-[6px] border-primary pl-5 leading-tight">${sec.text.trim()}</h3>`;
+                    } else if (sec.type === 'paragraph') {
+                        const formatted = sec.text.split('\n').map(p => p.trim()).filter(p => p.length > 0).map(p => `<p class="mb-6">${p}</p>`).join('');
+                        dynamicSectionsHtml += `<div class="prose prose-lg sm:prose-xl max-w-none text-foreground/90 leading-relaxed text-justify-my mb-8">${formatted}</div>`;
+                    } else if (sec.type === 'images') {
+                        sec.urls.forEach(url => {
+                            dynamicSectionsHtml += `<div class="rounded-2xl overflow-hidden shadow-lg border border-border my-8"><img src="${url}" class="w-full h-auto object-cover"></div>`;
+                        });
+                    }
+                });
+                dynamicSectionsHtml += `</div>`;
+            }
+
+            const formattedMain = post.detail.split('\n').map(p => p.trim()).filter(p => p.length > 0).map(p => `<p class="mb-6">${p}</p>`).join('');
+
+            // Related Articles
+            const otherPosts = globalBlogData.filter(p => p.id !== id).slice(0, 3);
+            let relatedPostsHtml = '';
+            if (otherPosts.length > 0) {
+                relatedPostsHtml = `
+                <div class="mt-16 pt-12 border-t border-border">
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-8 border-l-[6px] border-primary pl-5 text-foreground">ဆက်စပ်ဆောင်းပါးများ</h3>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    ${otherPosts.map(p => {
+                        const excerpt = String(p.detail).length > 80 ? String(p.detail).substring(0, 80) + '...' : p.detail;
+                        return `
+                            <article class="bg-background rounded-2xl border border-border overflow-hidden hover:border-primary/30 transition-all cursor-pointer shadow-sm hover:shadow-md flex flex-col group" onclick="openBlogDetail(${p.id})">
+                                <div class="aspect-video overflow-hidden bg-primary/5">
+                                    ${p.images.length > 0 ? `<img src="${p.images[0]}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">` : ''}
+                                </div>
+                                <div class="p-5 flex flex-col flex-grow">
+                                    <h4 class="font-bold text-foreground line-clamp-2 mb-2 group-hover:text-primary transition-colors text-base leading-snug">${p.title.trim()}</h4>
+                                    <p class="text-sm text-muted-foreground line-clamp-2 mt-auto text-justify-my">${excerpt.trim()}</p>
+                                </div>
+                            </article>
+                        `;
+                    }).join('')}
+                    </div>
+                </div>
+                `;
+            }
+
+            const modalContent = document.getElementById('blogDetailContent');
+            modalContent.innerHTML = `
+                <div class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8 relative">
+                    <button onclick="closeBlogDetail()" class="fixed top-8 right-8 z-[110] p-3 bg-card hover:bg-secondary border border-border rounded-full shadow-lg transition-all group">
+                        <i data-lucide="x" class="h-6 w-6 text-foreground"></i>
+                    </button>
+                    
+                    <button onclick="closeBlogDetail()" class="mb-12 inline-flex items-center gap-2 text-sm font-bold text-foreground hover:text-primary transition-colors px-4 py-2 rounded-lg bg-card border border-border shadow-sm group">
+                        <i data-lucide="arrow-left" class="h-4 w-4 group-hover:-translate-x-1 transition-transform"></i> ဆောင်းပါးများသို့ ပြန်သွားရန်
+                    </button>
+                    
+                    <article class="bg-card rounded-[2.5rem] border border-border p-8 sm:p-12 shadow-2xl">
+                        <header class="mb-12 text-center">
+                            ${post.date ? `<div class="inline-flex items-center gap-2 mb-6 text-sm font-bold text-primary uppercase tracking-wider bg-primary/10 px-4 py-1.5 rounded-full"><i data-lucide="calendar" class="h-4 w-4"></i> ${post.date}</div>` : ''}
+                            <h1 class="text-3xl sm:text-5xl font-black text-foreground leading-tight tracking-tight mb-8">
+                                ${post.title.trim()}
+                            </h1>
+                            <div class="flex items-center justify-center gap-4 py-6 border-y border-border/50">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                                    <img src="./img/Mr Linuxer Logo..png" class="w-8 h-8 object-contain">
+                                </div>
+                                <div class="text-left">
+                                    <p class="text-sm font-bold text-foreground">Mr.Linuxer Team</p>
+                                    <p class="text-xs text-muted-foreground">Expert Insights</p>
+                                </div>
+                            </div>
+                        </header>
+                        
+                        ${heroImageHtml}
+
+                        <div class="prose prose-lg sm:prose-xl max-w-none text-foreground/90 leading-relaxed text-justify-my">
+                            ${formattedMain}
+                        </div>
+
+                        ${dynamicSectionsHtml}
+
+                        ${relatedPostsHtml}
+                        
+                        <div class="mt-16 pt-12 border-t border-border flex justify-center">
+                            <button onclick="closeBlogDetail()" class="inline-flex items-center gap-2 text-lg font-bold text-primary-foreground bg-primary hover:bg-primary/90 transition-all px-10 py-4 rounded-xl shadow-lg hover:shadow-primary/25 group">
+                                <i data-lucide="arrow-left" class="h-5 w-5 group-hover:-translate-x-1 transition-transform"></i> ဆောင်းပါးများသို့ ပြန်သွားရန်
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            `;
+
+            lucide.createIcons();
+            document.getElementById('blogDetailModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('blogDetailModal').scrollTo({ top: 0 });
+        }
+
+        function closeBlogDetail() {
+            document.getElementById('blogDetailModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchBlogPosts);
+    </script>
+</body>
+
+</html>
