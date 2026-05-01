@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mr.Linuxer - Your trusted partner for cybersecurity, web development, mobile apps, and AI solutions. Driven by Code, Powered by Teamwork.">
-  <meta name="keywords" content="cybersecurity, IT solutions, web development, mobile apps, AI, Myanmar">
+  <title>Mr.Linuxer | Cybersecurity & IT Solutions in Myanmar</title>
+  <meta name="description"
+    content="Mr.Linuxer is your trusted partner for professional cybersecurity, web development, mobile apps, and AI solutions in Myanmar. Driven by Code, Powered by Teamwork.">
+  <meta name="keywords"
+    content="cybersecurity Myanmar, web development Myanmar, mobile app development, AI solutions, Mr.Linuxer, IT solutions Nay Pyi Taw">
   <meta name="author" content="Mr.Linuxer">
-  <meta name="theme-color" content="#fafafa">
-  <title>Mr.Linuxer | Cybersecurity & IT Solutions</title>
-  
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mrlinuxer.com/index.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mrlinuxer.com/index.html">
+  <meta property="og:title" content="Mr.Linuxer | Cybersecurity & IT Solutions">
+  <meta property="og:description"
+    content="Professional cybersecurity, web development, and AI solutions. Securing your digital future with expert IT services.">
+  <meta property="og:image" content="https://mrlinuxer.com/img/hero.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://mrlinuxer.com/index.html">
+  <meta property="twitter:title" content="Mr.Linuxer | Cybersecurity & IT Solutions">
+  <meta property="twitter:description"
+    content="Professional cybersecurity, web development, and AI solutions. Securing your digital future with expert IT services.">
+  <meta property="twitter:image" content="https://mrlinuxer.com/img/hero.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="./img/Mr Linuxer Logo..png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap"
+    rel="stylesheet">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -46,72 +68,94 @@
       },
     }
   </script>
-  
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       background-color: #fafafa;
       color: #171717;
     }
-    
+
     .font-mono {
       font-family: 'JetBrains Mono', monospace;
     }
-    
+
     /* Custom Animations */
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
-    
+
     @keyframes pulse-glow {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
+
+      0%,
+      100% {
+        opacity: 0.5;
+      }
+
+      50% {
+        opacity: 1;
+      }
     }
-    
+
     .animate-float {
       animation: float 3s ease-in-out infinite;
     }
-    
+
     .animate-float-delayed {
       animation: float 3s ease-in-out infinite 1.5s;
     }
-    
+
     .animate-pulse-glow {
       animation: pulse-glow 2s ease-in-out infinite;
     }
-    
+
     /* Grid Pattern */
     .grid-pattern {
-      background-image: 
+      background-image:
         linear-gradient(to right, rgba(220, 38, 38, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(220, 38, 38, 0.03) 1px, transparent 1px);
       background-size: 40px 40px;
     }
-    
+
     /* Gradient Overlays */
     .gradient-radial {
       background: radial-gradient(circle at 50% 50%, rgba(220, 38, 38, 0.08), transparent 50%);
     }
-    
+
     /* Terminal cursor blink */
     @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
+
+      0%,
+      50% {
+        opacity: 1;
+      }
+
+      51%,
+      100% {
+        opacity: 0;
+      }
     }
-    
+
     .cursor-blink {
       animation: blink 1s step-end infinite;
     }
-    
+
     /* Scroll Reveal Animation */
     .reveal {
       opacity: 0;
@@ -119,6 +163,7 @@
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       will-change: opacity, transform;
     }
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
@@ -139,19 +184,31 @@
       z-index: 9999;
       transition: opacity 0.6s ease, visibility 0.6s ease;
     }
+
     #loader-wrapper.fade-out {
       opacity: 0;
       visibility: hidden;
     }
+
     .loader-logo {
       width: 80px;
       height: auto;
       animation: pulse 1.5s infinite ease-in-out;
       margin-bottom: 20px;
     }
+
     @keyframes pulse {
-      0%, 100% { transform: scale(0.95); opacity: 0.8; }
-      50% { transform: scale(1.05); opacity: 1; }
+
+      0%,
+      100% {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
     }
 
     /* Typography Polish */
@@ -160,20 +217,23 @@
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
-    p { line-height: 1.75; }
+
+    p {
+      line-height: 1.75;
+    }
 
     /* Smooth scrolling */
     html {
       scroll-behavior: smooth;
     }
-    
+
     /* Mobile menu transition */
     .mobile-menu {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease-out;
     }
-    
+
     .mobile-menu.open {
       max-height: 500px;
     }
@@ -188,18 +248,23 @@
 
     /* Infinite Marquee Animation */
     @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
-    
+
     .animate-marquee {
       animation: marquee 35s linear infinite;
     }
-    
+
     .animate-marquee:hover {
       animation-play-state: paused;
     }
-    
+
     .mask-edges {
       -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
       mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
@@ -211,24 +276,29 @@
       -webkit-text-stroke: 2px rgba(23, 23, 23, 0.25);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     .text-stroke-effect:hover {
-      -webkit-text-stroke: 2px rgba(220, 38, 38, 0.9); /* Hover တင်လျှင် အနီရောင် */
+      -webkit-text-stroke: 2px rgba(220, 38, 38, 0.9);
+      /* Hover တင်လျှင် အနီရောင် */
       color: rgba(220, 38, 38, 0.1);
       text-shadow: 0 0 30px rgba(220, 38, 38, 0.4);
       transform: scale(1.03) rotate(-1deg);
     }
-    
+
     .text-solid-effect {
       color: rgba(23, 23, 23, 0.15);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     .text-solid-effect:hover {
-      color: rgba(220, 38, 38, 0.9); /* Hover တင်လျှင် အနီရောင် */
+      color: rgba(220, 38, 38, 0.9);
+      /* Hover တင်လျှင် အနီရောင် */
       text-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
       transform: scale(1.03) rotate(1deg);
     }
   </style>
 </head>
+
 <body class="bg-background text-foreground selection:bg-primary/20 selection:text-primary">
   <!-- Page Loader -->
   <div id="loader-wrapper">
@@ -239,7 +309,8 @@
   </div>
 
   <!-- Header -->
-  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
+  <header id="header"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <!-- Logo -->
@@ -249,24 +320,31 @@
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</a>
-          <a href="about.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">About</a>
-          <a href="services.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Services</a>
-          <a href="news.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">News</a>
-          <a href="blog.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Blogs</a>
-          <a href="contact.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Contact</a>
+          <a href="index.html" class="text-sm font-medium text-primary transition-colors">Home</a>
+          <a href="about.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">About</a>
+          <a href="services.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Services</a>
+          <a href="news.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">News</a>
+          <a href="blog.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Blogs</a>
+          <a href="contact.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Contact</a>
         </nav>
 
         <!-- Right Side Actions -->
         <div class="flex items-center gap-4">
           <!-- CTA Button -->
-          <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
+          <a href="contact.html"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
             Get Started
             <i data-lucide="arrow-right" class="h-4 w-4"></i>
           </a>
 
           <!-- Mobile Menu Button -->
-          <button id="mobileMenuBtn" class="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors">
+          <button id="mobileMenuBtn"
+            class="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors">
             <i data-lucide="menu" class="h-6 w-6" id="menuIcon"></i>
           </button>
         </div>
@@ -275,15 +353,22 @@
       <!-- Mobile Navigation -->
       <div id="mobileMenu" class="mobile-menu md:hidden">
         <nav class="flex flex-col gap-2 py-4 border-t border-border">
-          <a href="index.html" class="px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
-          <a href="about.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
-          <a href="services.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Services</a>
-          <a href="news.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
-          <a href="blog.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
-          <a href="contact.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Contact</a>
+          <a href="index.html"
+            class="px-4 py-2 text-sm font-medium text-primary bg-secondary rounded-lg transition-colors">Home</a>
+          <a href="about.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
+          <a href="services.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Services</a>
+          <a href="news.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
+          <a href="blog.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
+          <a href="contact.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Contact</a>
 
           <div class="px-4 pt-2 border-t border-border mt-2">
-            <a href="contact.html" class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
+            <a href="contact.html"
+              class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
               Get Started
               <i data-lucide="arrow-right" class="h-4 w-4"></i>
             </a>
@@ -294,11 +379,12 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-background reveal">
+  <section id="home"
+    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-background reveal">
     <!-- Background Elements -->
     <div class="absolute inset-0 grid-pattern"></div>
     <div class="absolute inset-0 gradient-radial"></div>
-    
+
     <!-- Floating Icons -->
     <div class="absolute top-1/4 left-1/4 text-primary/20 animate-float hidden lg:block">
       <i data-lucide="shield-check" class="h-16 w-16"></i>
@@ -335,16 +421,19 @@
 
       <!-- Description -->
       <p class="max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground mb-10 leading-relaxed text-pretty">
-        Mr.Linuxer delivers cutting-edge cybersecurity solutions, web development, mobile applications, and AI services. We transform digital challenges into secure, innovative opportunities.
+        Mr.Linuxer delivers cutting-edge cybersecurity solutions, web development, mobile applications, and AI services.
+        We transform digital challenges into secure, innovative opportunities.
       </p>
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="./services.html" class="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/25">
+        <a href="./services.html"
+          class="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/25">
           Explore Services
           <i data-lucide="arrow-right" class="h-5 w-5 group-hover:translate-x-1 transition-transform"></i>
         </a>
-        <a href="./contact.html" class="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-secondary-foreground font-semibold rounded-lg hover:bg-secondary/80 border border-border transition-colors">
+        <a href="./contact.html"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-secondary-foreground font-semibold rounded-lg hover:bg-secondary/80 border border-border transition-colors">
           <i data-lucide="mail" class="h-5 w-5"></i>
           Contact Us
         </a>
@@ -369,7 +458,8 @@
 
     <!-- Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-      <a href="#about" class="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+      <a href="#about"
+        class="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
         <span class="text-xs font-medium">Scroll Down</span>
         <i data-lucide="chevron-down" class="h-5 w-5 animate-bounce"></i>
       </a>
@@ -377,41 +467,44 @@
   </section>
 
   <!-- Marquee Services Section -->
-  <section class="py-6 sm:py-10 border-y border-border/50 bg-background/40 backdrop-blur-md overflow-hidden relative flex items-center">
+  <section
+    class="py-6 sm:py-10 border-y border-border/50 bg-background/40 backdrop-blur-md overflow-hidden relative flex items-center">
     <div class="mask-edges w-full flex overflow-hidden group">
       <div class="animate-marquee flex w-max items-center">
         <!-- Block 1 -->
-        <div class="flex items-center gap-6 sm:gap-10 pr-6 sm:pr-10 w-max text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wider leading-none">
+        <div
+          class="flex items-center gap-6 sm:gap-10 pr-6 sm:pr-10 w-max text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wider leading-none">
           <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">Cybersecurity</span>
           <i data-lucide="shield-check" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-          
+
           <span class="text-stroke-effect cursor-default inline-block whitespace-nowrap">Cloud Computing</span>
           <i data-lucide="cloud" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-          
+
           <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">IT Management</span>
           <i data-lucide="server" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-          
+
           <span class="text-stroke-effect cursor-default inline-block whitespace-nowrap">Creative Design</span>
           <i data-lucide="pen-tool" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-          
+
           <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">Customer Service</span>
           <i data-lucide="headset" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
         </div>
-        
+
         <!-- Block 2 (Duplicate for Seamless Scroll) -->
-        <div class="flex items-center gap-6 sm:gap-10 pr-6 sm:pr-10 w-max text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wider leading-none">
+        <div
+          class="flex items-center gap-6 sm:gap-10 pr-6 sm:pr-10 w-max text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wider leading-none">
           <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">Cybersecurity</span>
           <i data-lucide="shield-check" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-          
+
           <span class="text-stroke-effect cursor-default inline-block whitespace-nowrap">Cloud Computing</span>
           <i data-lucide="cloud" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-          
+
           <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">IT Management</span>
           <i data-lucide="server" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-          
+
           <span class="text-stroke-effect cursor-default inline-block whitespace-nowrap">Creative Design</span>
           <i data-lucide="pen-tool" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-          
+
           <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">Customer Service</span>
           <i data-lucide="headset" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
         </div>
@@ -435,7 +528,7 @@
               </div>
               <span class="ml-4 text-xs font-mono text-background/60">root@mrlinuxer:~ </span>
             </div>
-            
+
             <!-- Terminal Content -->
             <div class="p-6 font-mono text-sm">
               <div class="space-y-3">
@@ -484,7 +577,8 @@
         <!-- Right Content -->
         <div>
           <!-- Section Badge -->
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
             <i data-lucide="info" class="h-4 w-4 text-primary"></i>
             <span class="text-sm font-medium text-primary">About Us</span>
           </div>
@@ -495,13 +589,18 @@
 
           <div class="space-y-4 text-muted-foreground leading-relaxed text-justify-my">
             <p>
-              Founded in 2019, <strong class="text-foreground">Mr.Linuxer</strong> has rapidly evolved from a passionate startup to a leading force in Myanmar&apos;s cybersecurity landscape. Our journey began with a simple mission: to protect and empower businesses through innovative technology solutions.
+              Founded in 2019, <strong class="text-foreground">Mr.Linuxer</strong> has rapidly evolved from a passionate
+              startup to a leading force in Myanmar&apos;s cybersecurity landscape. Our journey began with a simple
+              mission: to protect and empower businesses through innovative technology solutions.
             </p>
             <p>
-              Today, we stand as a trusted partner for organizations seeking comprehensive IT solutions. Our team combines deep technical expertise with a client-centric approach, delivering services that not only meet but exceed expectations.
+              Today, we stand as a trusted partner for organizations seeking comprehensive IT solutions. Our team
+              combines deep technical expertise with a client-centric approach, delivering services that not only meet
+              but exceed expectations.
             </p>
             <p>
-              From penetration testing to custom software development, we offer end-to-end solutions that safeguard your digital assets while driving business growth.
+              From penetration testing to custom software development, we offer end-to-end solutions that safeguard your
+              digital assets while driving business growth.
             </p>
           </div>
 
@@ -540,54 +639,71 @@
   <!-- 5S Philosophy Banner Section -->
   <section class="py-16 bg-primary text-primary-foreground relative overflow-hidden">
     <!-- Background Decor -->
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
-    
+    <div class="absolute inset-0 opacity-10"
+      style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;">
+    </div>
+
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="text-center mb-12">
-        <span class="font-mono text-primary-foreground/80 tracking-widest uppercase text-sm mb-2 block">Our Core Philosophy</span>
+        <span class="font-mono text-primary-foreground/80 tracking-widest uppercase text-sm mb-2 block">Our Core
+          Philosophy</span>
         <h2 class="text-3xl sm:text-4xl font-bold">The 5S Foundation</h2>
       </div>
-      
+
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
         <!-- Safe -->
-        <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
-          <div class="h-12 w-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+        <div
+          class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+          <div
+            class="h-12 w-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="shield-check" class="h-6 w-6"></i>
           </div>
           <h3 class="font-bold text-lg mb-2">Safe</h3>
-          <p class="text-xs text-primary-foreground/80 leading-relaxed">Risk-free digital environments for your operations.</p>
+          <p class="text-xs text-primary-foreground/80 leading-relaxed">Risk-free digital environments for your
+            operations.</p>
         </div>
-        
+
         <!-- Secure -->
-        <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
-          <div class="h-12 w-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+        <div
+          class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+          <div
+            class="h-12 w-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="lock" class="h-6 w-6"></i>
           </div>
           <h3 class="font-bold text-lg mb-2">Secure</h3>
-          <p class="text-xs text-primary-foreground/80 leading-relaxed">Impenetrable defenses against modern threats.</p>
+          <p class="text-xs text-primary-foreground/80 leading-relaxed">Impenetrable defenses against modern threats.
+          </p>
         </div>
-        
+
         <!-- Smart -->
-        <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
-          <div class="h-12 w-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+        <div
+          class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+          <div
+            class="h-12 w-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="brain" class="h-6 w-6"></i>
           </div>
           <h3 class="font-bold text-lg mb-2">Smart</h3>
-          <p class="text-xs text-primary-foreground/80 leading-relaxed">Intelligent, AI-driven automation & strategies.</p>
+          <p class="text-xs text-primary-foreground/80 leading-relaxed">Intelligent, AI-driven automation & strategies.
+          </p>
         </div>
-        
+
         <!-- Stable -->
-        <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
-          <div class="h-12 w-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+        <div
+          class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
+          <div
+            class="h-12 w-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="server" class="h-6 w-6"></i>
           </div>
           <h3 class="font-bold text-lg mb-2">Stable</h3>
-          <p class="text-xs text-primary-foreground/80 leading-relaxed">High-performance and reliable infrastructure.</p>
+          <p class="text-xs text-primary-foreground/80 leading-relaxed">High-performance and reliable infrastructure.
+          </p>
         </div>
-        
+
         <!-- Solution -->
-        <div class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 col-span-2 md:col-span-1 md:col-start-2 lg:col-start-auto">
-          <div class="h-12 w-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+        <div
+          class="group p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 col-span-2 md:col-span-1 md:col-start-2 lg:col-start-auto">
+          <div
+            class="h-12 w-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
             <i data-lucide="puzzle" class="h-6 w-6"></i>
           </div>
           <h3 class="font-bold text-lg mb-2">Solution</h3>
@@ -610,179 +726,202 @@
           Comprehensive <span class="text-primary">IT Solutions</span> for Your Business
         </h2>
         <p class="text-muted-foreground leading-relaxed">
-          From cybersecurity to custom software development, we deliver end-to-end solutions that protect and empower your digital infrastructure.
+          From cybersecurity to custom software development, we deliver end-to-end solutions that protect and empower
+          your digital infrastructure.
         </p>
       </div>
 
       <!-- Services Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         <!-- Web Development -->
-        <div class="group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-2 overflow-hidden z-10 flex flex-col cursor-pointer">
+        <div
+          class="group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-2 overflow-hidden z-10 flex flex-col cursor-pointer">
           <!-- Glow Effect -->
-          <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10"></div>
-          
-          <!-- Icon -->
-          <div class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/5 border border-primary/10 mb-8 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-500">
-            <i data-lucide="globe" class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+          <div
+            class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10">
           </div>
-          
-          <h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Web Development</h3>
+
+          <!-- Icon -->
+          <div
+            class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/5 border border-primary/10 mb-8 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-500">
+            <i data-lucide="globe"
+              class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Web
+            Development</h3>
           <p class="text-sm text-muted-foreground mb-6 leading-relaxed flex-grow">
             Custom web applications built with cutting-edge technologies for optimal performance and security.
           </p>
-          
+
           <ul class="space-y-3 text-sm text-muted-foreground mb-8">
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">Responsive Design</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">E-commerce Solutions</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">CMS Integration</span>
             </li>
           </ul>
 
-          <!-- Hidden Arrow link that appears on hover -->
-          <div class="flex items-center gap-2 text-sm font-bold text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 border-t border-border pt-5 mt-auto">
-            <span>Explore Service</span>
-            <i data-lucide="arrow-right" class="h-4 w-4"></i>
-          </div>
+
         </div>
 
         <!-- Mobile Development -->
-        <div class="group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-2 overflow-hidden z-10 flex flex-col cursor-pointer">
-          <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10"></div>
-          
-          <div class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/5 border border-primary/10 mb-8 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-500">
-            <i data-lucide="smartphone" class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+        <div
+          class="group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-2 overflow-hidden z-10 flex flex-col cursor-pointer">
+          <div
+            class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10">
           </div>
-          
-          <h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Mobile Apps</h3>
+
+          <div
+            class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/5 border border-primary/10 mb-8 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-500">
+            <i data-lucide="smartphone"
+              class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+            Mobile Apps</h3>
           <p class="text-sm text-muted-foreground mb-6 leading-relaxed flex-grow">
             Native and cross-platform mobile applications that deliver exceptional user experiences.
           </p>
-          
+
           <ul class="space-y-3 text-sm text-muted-foreground mb-8">
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">iOS & Android</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">React Native</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">Flutter Development</span>
             </li>
           </ul>
 
-          <div class="flex items-center gap-2 text-sm font-bold text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 border-t border-border pt-5 mt-auto">
-            <span>Explore Service</span>
-            <i data-lucide="arrow-right" class="h-4 w-4"></i>
-          </div>
+
         </div>
 
         <!-- Cybersecurity -->
-        <div class="group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-2 overflow-hidden z-10 flex flex-col cursor-pointer">
-          <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10"></div>
-          
-          <div class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/5 border border-primary/10 mb-8 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-500">
-            <i data-lucide="shield" class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+        <div
+          class="group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-2 overflow-hidden z-10 flex flex-col cursor-pointer">
+          <div
+            class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10">
           </div>
-          
-          <h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">Cybersecurity</h3>
+
+          <div
+            class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/5 border border-primary/10 mb-8 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-500">
+            <i data-lucide="shield"
+              class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+            Cybersecurity</h3>
           <p class="text-sm text-muted-foreground mb-6 leading-relaxed flex-grow">
             Comprehensive security solutions to protect your digital assets from evolving threats.
           </p>
-          
+
           <ul class="space-y-3 text-sm text-muted-foreground mb-8">
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">Penetration Testing</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">Security Audits</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">Incident Response</span>
             </li>
           </ul>
 
-          <div class="flex items-center gap-2 text-sm font-bold text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 border-t border-border pt-5 mt-auto">
-            <span>Explore Service</span>
-            <i data-lucide="arrow-right" class="h-4 w-4"></i>
-          </div>
         </div>
 
         <!-- AI Solutions -->
-        <div class="group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-2 overflow-hidden z-10 flex flex-col cursor-pointer">
-          <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10"></div>
-          
-          <div class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/5 border border-primary/10 mb-8 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-500">
-            <i data-lucide="brain" class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+        <div
+          class="group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-2 overflow-hidden z-10 flex flex-col cursor-pointer">
+          <div
+            class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10">
           </div>
-          
-          <h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">AI Solutions</h3>
+
+          <div
+            class="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/5 border border-primary/10 mb-8 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-lg group-hover:shadow-primary/30 transition-all duration-500">
+            <i data-lucide="brain"
+              class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+          </div>
+
+          <h3 class="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">AI
+            Solutions</h3>
           <p class="text-sm text-muted-foreground mb-6 leading-relaxed flex-grow">
             Intelligent automation and machine learning solutions to transform your business operations.
           </p>
-          
+
           <ul class="space-y-3 text-sm text-muted-foreground mb-8">
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">Machine Learning</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">Natural Language</span>
             </li>
             <li class="flex items-center gap-3">
-              <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div
+                class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                 <i data-lucide="check" class="h-3 w-3"></i>
               </div>
               <span class="group-hover:text-foreground transition-colors duration-300">Process Automation</span>
             </li>
           </ul>
 
-          <div class="flex items-center gap-2 text-sm font-bold text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 border-t border-border pt-5 mt-auto">
-            <span>Explore Service</span>
-            <i data-lucide="arrow-right" class="h-4 w-4"></i>
-          </div>
         </div>
       </div>
 
       <!-- CTA -->
       <div class="text-center mt-12">
-        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors">
+        <a href="#contact"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors">
           Discuss Your Project
           <i data-lucide="arrow-right" class="h-4 w-4"></i>
         </a>
@@ -837,18 +976,16 @@
 
       <div class="grid lg:grid-cols-2 gap-12">
         <!-- Map Embedded (Replaced Form) -->
-        <div class="bg-card rounded-xl border border-border p-2 sm:p-4 min-h-[400px] relative overflow-hidden shadow-sm group">
-          <div class="absolute inset-0 bg-primary/5 pointer-events-none group-hover:bg-transparent transition-colors z-10 rounded-xl"></div>
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.16467332247!2d96.06558235!3d19.74928275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c8b9d79c6d3761%3A0x86bd71ed4cce314!2sNaypyidaw%2C%20Myanmar%20(Burma)!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
-            width="100%" 
-            height="100%" 
-            style="border:0; border-radius: 0.5rem;" 
-            allowfullscreen="" 
-            loading="lazy" 
+        <div
+          class="bg-card rounded-xl border border-border p-2 sm:p-4 min-h-[400px] relative overflow-hidden shadow-sm group">
+          <div
+            class="absolute inset-0 bg-primary/5 pointer-events-none group-hover:bg-transparent transition-colors z-10 rounded-xl">
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.16467332247!2d96.06558235!3d19.74928275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c8b9d79c6d3761%3A0x86bd71ed4cce314!2sNaypyidaw%2C%20Myanmar%20(Burma)!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+            width="100%" height="100%" style="border:0; border-radius: 0.5rem;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            class="absolute inset-0 w-full h-full object-cover rounded-lg"
-          ></iframe>
+            class="absolute inset-0 w-full h-full object-cover rounded-lg"></iframe>
         </div>
 
         <!-- Contact Info -->
@@ -856,48 +993,74 @@
           <!-- Info Cards -->
           <div class="grid sm:grid-cols-2 gap-4">
             <!-- Email Card -->
-            <div class="group relative p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 overflow-hidden z-10">
-              <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10"></div>
-              <div class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-md transition-all duration-500">
-                <i data-lucide="mail" class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+            <div
+              class="group relative p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 overflow-hidden z-10">
+              <div
+                class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10">
               </div>
-              <h4 class="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">Email</h4>
-              <a href="mailto:hello@mrlinuxer.net" class="text-sm text-muted-foreground hover:text-primary transition-colors relative z-20">
+              <div
+                class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-md transition-all duration-500">
+                <i data-lucide="mail"
+                  class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+              </div>
+              <h4 class="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                Email</h4>
+              <a href="mailto:hello@mrlinuxer.net"
+                class="text-sm text-muted-foreground hover:text-primary transition-colors relative z-20">
                 hello@mrlinuxer.net
               </a>
             </div>
 
             <!-- Phone Card -->
-            <div class="group relative p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 overflow-hidden z-10">
-              <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10"></div>
-              <div class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-md transition-all duration-500">
-                <i data-lucide="phone" class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+            <div
+              class="group relative p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 overflow-hidden z-10">
+              <div
+                class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10">
               </div>
-              <h4 class="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">Phone</h4>
-              <a href="tel:+959260438525" class="text-sm text-muted-foreground hover:text-primary transition-colors relative z-20">
+              <div
+                class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-md transition-all duration-500">
+                <i data-lucide="phone"
+                  class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+              </div>
+              <h4 class="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                Phone</h4>
+              <a href="tel:+959260438525"
+                class="text-sm text-muted-foreground hover:text-primary transition-colors relative z-20">
                 +(95) 9260438525
               </a>
             </div>
 
             <!-- Location Card -->
-            <div class="group relative p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 overflow-hidden z-10">
-              <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10"></div>
-              <div class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-md transition-all duration-500">
-                <i data-lucide="map-pin" class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+            <div
+              class="group relative p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 overflow-hidden z-10">
+              <div
+                class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10">
               </div>
-              <h4 class="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">Location</h4>
+              <div
+                class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-md transition-all duration-500">
+                <i data-lucide="map-pin"
+                  class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+              </div>
+              <h4 class="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                Location</h4>
               <p class="text-sm text-muted-foreground relative z-20">
                 Nay Pyi Taw, Myanmar
               </p>
             </div>
 
             <!-- Office Hours Card -->
-            <div class="group relative p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 overflow-hidden z-10">
-              <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10"></div>
-              <div class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-md transition-all duration-500">
-                <i data-lucide="clock" class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+            <div
+              class="group relative p-6 rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-1 overflow-hidden z-10">
+              <div
+                class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10">
               </div>
-              <h4 class="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">Office Hours</h4>
+              <div
+                class="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 border border-primary/10 mb-4 group-hover:bg-primary group-hover:scale-110 group-hover:-rotate-3 group-hover:shadow-md transition-all duration-500">
+                <i data-lucide="clock"
+                  class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+              </div>
+              <h4 class="font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
+                Office Hours</h4>
               <p class="text-sm text-muted-foreground relative z-20">
                 Mon - Fri: 9AM - 6PM
               </p>
@@ -908,8 +1071,13 @@
           <div class="p-6 rounded-xl bg-card border border-border">
             <h4 class="font-semibold text-foreground mb-4">Follow Us</h4>
             <div class="flex gap-3">
-              <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors" aria-label="Facebook">
-                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer"
+                class="w-10 h-10 rounded-lg bg-secondary border border-border flex items-center justify-center text-muted-foreground hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors"
+                aria-label="Facebook">
+                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
               </a>
             </div>
           </div>
@@ -925,14 +1093,19 @@
         <!-- Brand Column -->
         <div class="col-span-2 md:col-span-1">
           <a href="index.html" class="flex items-center gap-2">
-          <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
-        </a>
+            <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
+          </a>
           <p class="mt-5 text-sm text-background/70 mb-6 leading-relaxed">
             Driven by Code, Powered by Teamwork. Your trusted partner for cybersecurity and IT solutions.
           </p>
           <div class="flex gap-3">
-            <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-background/10 border border-background/20 flex items-center justify-center text-background/70 hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors" aria-label="Facebook">
-              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-lg bg-background/10 border border-background/20 flex items-center justify-center text-background/70 hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors"
+              aria-label="Facebook">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
             </a>
           </div>
         </div>
@@ -941,12 +1114,18 @@
         <div>
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Quick Links</h3>
           <ul class="space-y-3">
-            <li><a href="index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a></li>
-            <li><a href="about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About Us</a></li>
-            <li><a href="services.html" class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
-            <li><a href="news.html" class="text-sm text-background/70 hover:text-primary transition-colors">News</a></li>
-            <li><a href="blog.html" class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a></li>
-            <li><a href="contact.html" class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
+            <li><a href="index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a>
+            </li>
+            <li><a href="about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About
+                Us</a></li>
+            <li><a href="services.html"
+                class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
+            <li><a href="news.html" class="text-sm text-background/70 hover:text-primary transition-colors">News</a>
+            </li>
+            <li><a href="blog.html" class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a>
+            </li>
+            <li><a href="contact.html"
+                class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
           </ul>
         </div>
 
@@ -954,11 +1133,18 @@
         <div>
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Services</h3>
           <ul class="space-y-3">
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Web Development</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Mobile Apps</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Cybersecurity</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">AI Solutions</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Consulting</span></li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Web
+                Development</span></li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Mobile
+                Apps</span></li>
+            <li><span
+                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Cybersecurity</span>
+            </li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">AI
+                Solutions</span></li>
+            <li><span
+                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Consulting</span>
+            </li>
           </ul>
         </div>
 
@@ -967,13 +1153,15 @@
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Contact</h3>
           <ul class="space-y-4">
             <li>
-              <a href="mailto:hello@mrlinuxer.net" class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
+              <a href="mailto:hello@mrlinuxer.net"
+                class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
                 <i data-lucide="mail" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
                 <span>hello@mrlinuxer.net</span>
               </a>
             </li>
             <li>
-              <a href="tel:+959260438525" class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
+              <a href="tel:+959260438525"
+                class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
                 <i data-lucide="phone" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
                 <span>+(95) 9260438525</span>
               </a>
@@ -1039,7 +1227,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-      
+
       // Initialize Lucide Icons
       lucide.createIcons();
 
@@ -1082,10 +1270,10 @@
 
       // Smooth scroll for internal anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
           const targetId = this.getAttribute('href');
           if (targetId === '#') return;
-          
+
           const target = document.querySelector(targetId);
           if (target) {
             e.preventDefault();
@@ -1106,15 +1294,15 @@
       const sheetId = '1FprMM_WcAz9_495HE2Nu1xI64Ymz-NKc9HK2PMAlBBQ';
       // URL for fetching public JSON output from Google Sheets
       const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
-      
+
       try {
         const response = await fetch(url);
         const text = await response.text();
-        
+
         // Extract JSON from Google Visualization API response format
         const jsonString = text.match(/google\.visualization\.Query\.setResponse\(([\s\S\w]+)\);/)[1];
         const data = JSON.parse(jsonString);
-        
+
         const cols = data.table.cols;
         const rows = data.table.rows;
 
@@ -1125,11 +1313,11 @@
         } else if (rows.length > 0) {
           // Label အလွတ်ဖြစ်နေပါက ပထမဆုံး row ကို header အဖြစ်ယူမည်
           headers = rows[0].c.map(cell => cell && cell.v ? String(cell.v).toLowerCase() : '');
-          rows.shift(); 
+          rows.shift();
         }
 
         let titleIdx = -1, detailIdx = -1, imageIdx = -1;
-        
+
         headers.forEach((label, idx) => {
           if (!label) return;
           // ပထမဆုံး တွေ့ရှိသော column ကိုသာ Main အဖြစ်ယူမည် (-1 စစ်ဆေးချက်)
@@ -1144,12 +1332,12 @@
         if (imageIdx === -1) imageIdx = 5;
 
         // Filter out empty rows, ensuring title column exists
-        const validRows = rows.filter(row => row && row.c && row.c[titleIdx]); 
+        const validRows = rows.filter(row => row && row.c && row.c[titleIdx]);
         const latestRows = validRows.slice(-3).reverse(); // ၃ ခုသာ ယူမည်
-        
+
         const newsContainer = document.getElementById('news-container');
         newsContainer.innerHTML = ''; // Clear loading state
-        
+
         if (latestRows.length === 0) {
           newsContainer.innerHTML = `<div class="col-span-full text-center text-muted-foreground py-8">လက်ရှိတွင် သတင်းအသစ်များ မရှိသေးပါ။</div>`;
           return;
@@ -1159,7 +1347,7 @@
         globalNewsData = latestRows.map((row, index) => {
           const title = row.c[titleIdx]?.v || 'Untitled';
           const detail = row.c[detailIdx]?.v || '';
-          
+
           let rawCoverPhoto = row.c[imageIdx]?.v || '';
           let coverPhotos = [];
           if (rawCoverPhoto) {
@@ -1172,20 +1360,20 @@
           let postDate = '';
           if (dateCell) {
             if (dateCell.f) {
-                postDate = dateCell.f;
+              postDate = dateCell.f;
             } else if (dateCell.v) {
-                let v = dateCell.v;
-                if (typeof v === 'string' && v.startsWith('Date(')) {
-                    let parts = v.match(/Date\((\d+),(\d+),(\d+)/);
-                    if (parts) {
-                        let d = new Date(parts[1], parts[2], parts[3]);
-                        postDate = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-                    } else {
-                        postDate = v;
-                    }
+              let v = dateCell.v;
+              if (typeof v === 'string' && v.startsWith('Date(')) {
+                let parts = v.match(/Date\((\d+),(\d+),(\d+)/);
+                if (parts) {
+                  let d = new Date(parts[1], parts[2], parts[3]);
+                  postDate = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
                 } else {
-                    postDate = String(v);
+                  postDate = v;
                 }
+              } else {
+                postDate = String(v);
+              }
             }
           }
 
@@ -1196,12 +1384,12 @@
             if (idx === titleIdx || idx === detailIdx || idx === imageIdx) return;
             if (idx <= 3) return; // Column A, B, C, D အားလုံးကို Dynamic Sections ထဲတွင် မပြစေရန် ပိတ်ထားပါသည်
             if (label.includes('author') || label.includes('ရေးသားသူ') || label.includes('name') || label.includes('အမည်')) return; // Author ကို ကျော်မည်
-            
+
             let cellValue = row.c[idx]?.v;
             if (!cellValue) return;
 
             let strValue = String(cellValue);
-            
+
             // Image Links ဖြစ်နေပါက
             if (strValue.trim().startsWith('http')) {
               const urls = strValue.split(/[\s,]+/).filter(u => u.startsWith('http'));
@@ -1210,7 +1398,7 @@
                 return;
               }
             }
-            
+
             // Text ဖြစ်နေပါက (ခေါင်းစဉ်လော၊ စာသားလော ခွဲခြားခြင်း)
             if (label.includes('title') || label.includes('ခေါင်းစဉ်') || label.includes('subtitle') || (strValue.length > 0 && strValue.length < 80)) {
               dynamicSections.push({ type: 'heading', text: strValue });
@@ -1233,12 +1421,12 @@
         globalNewsData.forEach(post => {
           // Generate Excerpt for preview card
           const excerpt = String(post.detail).length > 120 ? String(post.detail).substring(0, 120) + '...' : post.detail;
-          
+
           const defaultIcon = `<i data-lucide="newspaper" class="h-16 w-16 text-primary/40"></i>`;
           // Card ပေါ်တွင် ပထမဆုံးပုံကိုသာ ပြမည်
           const imageHtml = post.images.length > 0 ? `<img src="${post.images[0]}" alt="${post.title}" class="w-full h-full object-cover">` : defaultIcon;
 
-      
+
           const dateHtml = post.date ? `
             <div class="flex items-center gap-1.5 text-xs font-medium text-primary mb-3 bg-primary/10 w-fit px-2.5 py-1 rounded-md">
               <i data-lucide="calendar" class="h-3.5 w-3.5"></i>
@@ -1268,12 +1456,12 @@
           `;
           newsContainer.innerHTML += card;
         });
-        
+
         // Re-initialize Lucide icons for dynamically added content
-        if(typeof lucide !== 'undefined') {
+        if (typeof lucide !== 'undefined') {
           lucide.createIcons();
         }
-        
+
       } catch (error) {
         console.error('Error fetching data from Google Sheets:', error);
         document.getElementById('news-container').innerHTML = `
@@ -1282,7 +1470,7 @@
             <p class="text-muted-foreground">ဒေတာရယူရာတွင် အခက်အခဲရှိနေပါသည်။ (Google Sheet ၏ Share Settings တွင် "Anyone with the link" ဖွင့်ထားရန် လိုအပ်နိုင်ပါသည်။)</p>
           </div>
         `;
-        if(typeof lucide !== 'undefined') {
+        if (typeof lucide !== 'undefined') {
           lucide.createIcons();
         }
       }
@@ -1307,7 +1495,7 @@
       let dynamicSectionsHtml = '';
       if (post.dynamicSections && post.dynamicSections.length > 0) {
         dynamicSectionsHtml = `<div class="mt-12 space-y-8 sm:space-y-10 border-t border-border pt-10 sm:pt-12">`;
-        
+
         post.dynamicSections.forEach(sec => {
           if (sec.type === 'heading') {
             dynamicSectionsHtml += `<h3 class="text-2xl sm:text-3xl font-bold text-foreground mt-8 mb-6 border-l-[6px] border-primary pl-5 leading-tight text-pretty">${sec.text.trim()}</h3>`;
@@ -1324,7 +1512,7 @@
             });
           }
         });
-        
+
         dynamicSectionsHtml += `</div>`;
       }
 
@@ -1344,9 +1532,9 @@
             <h3 class="text-2xl sm:text-3xl font-bold mb-8 border-l-[6px] border-primary pl-5 text-foreground">အခြားဖတ်ရှုရန် သတင်းများ</h3>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               ${otherPosts.map(p => {
-                const excerpt = String(p.detail).length > 100 ? String(p.detail).substring(0, 100) + '...' : p.detail;
-                const imageHtml = p.images.length > 0 ? `<img src="${p.images[0]}" class="w-full h-full object-cover">` : `<i data-lucide="newspaper" class="h-8 w-8 text-primary/40"></i>`;
-                return `
+          const excerpt = String(p.detail).length > 100 ? String(p.detail).substring(0, 100) + '...' : p.detail;
+          const imageHtml = p.images.length > 0 ? `<img src="${p.images[0]}" class="w-full h-full object-cover">` : `<i data-lucide="newspaper" class="h-8 w-8 text-primary/40"></i>`;
+          return `
                   <article class="bg-background rounded-xl border border-border overflow-hidden hover:border-primary/30 transition-all cursor-pointer shadow-sm hover:shadow-md flex flex-col group" onclick="openNewsDetail(${p.id})">
                     <div class="aspect-video overflow-hidden bg-primary/5 flex items-center justify-center">
                       ${imageHtml}
@@ -1357,7 +1545,7 @@
                     </div>
                   </article>
                 `;
-              }).join('')}
+        }).join('')}
             </div>
           </div>
         `;
@@ -1412,12 +1600,12 @@
           </article>
         </div>
       `;
-      
+
       // Modal ပြသခြင်း နှင့် Background Scroll ပိတ်ခြင်း
       lucide.createIcons();
       document.getElementById('newsDetailModal').classList.remove('hidden');
       document.body.style.overflow = 'hidden';
-      
+
       // အပေါ်ဆုံးသို့ ရွှေ့ပေးခြင်း
       document.getElementById('newsDetailModal').scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -1432,4 +1620,5 @@
     document.addEventListener('DOMContentLoaded', fetchLatestNews);
   </script>
 </body>
+
 </html>
