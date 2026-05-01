@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Mr.Linuxer - Your trusted partner for cybersecurity, web development, mobile apps, and AI solutions.">
+  <meta name="theme-color" content="#fafafa">
+  <title>About Us | Mr.Linuxer</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#fafafa',
+            foreground: '#171717',
+            card: '#ffffff',
+            'card-foreground': '#171717',
+            primary: '#dc2626',
+            'primary-foreground': '#fafafa',
+            secondary: '#f5f5f5',
+            'secondary-foreground': '#171717',
+            muted: '#f0f0f0',
+            'muted-foreground': '#737373',
+            border: '#e5e5e5',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Padauk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        },
+      },
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: #fafafa; color: #171717; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    
+    /* Smooth scrolling */
+    html { scroll-behavior: smooth; }
+    
+    /* Mobile menu transition */
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+    .mobile-menu.open { max-height: 400px; }
+
+    /* Text Justification */
+    .text-justify-my { text-align: justify; text-justify: inter-word; word-break: break-word; hyphens: auto; }
+
+    /* Grand Hero Background */
+    .hero-pattern {
+      background-image: radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.1) 0, transparent 50%), 
+                        radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.05) 0, transparent 50%);
+    }
+    
+    /* Glassmorphism Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Header (Exact Match with Home Page) -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Home</a>
+          <a href="about.html" class="text-sm font-bold text-primary transition-colors">About</a>
+          <a href="services.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Services</a>
+          <a href="./news.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">News</a>
+          <a href="index.html#blogs" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Blogs</a>
+          <a href="index.html#contact" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Contact</a>
+        </nav>
+
+        <!-- Right Side Actions -->
+        <div class="flex items-center gap-4">
+          <!-- CTA Button -->
+          <a href="index.html#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
+            Get Started
+            <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobileMenuBtn" class="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors">
+            <i data-lucide="menu" class="h-6 w-6" id="menuIcon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div id="mobileMenu" class="mobile-menu md:hidden">
+        <nav class="flex flex-col gap-2 py-4 border-t border-border">
+          <a href="index.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
+          <a href="about.html" class="px-4 py-2 text-sm font-bold text-primary bg-primary/5 rounded-lg transition-colors">About</a>
+          <a href="index.html#services" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Services</a>
+          <a href="index.html#news" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
+          <a href="index.html#blogs" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
+          <a href="index.html#contact" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Contact</a>
+
+          <div class="px-4 pt-2 border-t border-border mt-2">
+            <a href="index.html#contact" class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
+              Get Started
+              <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Hero Section (Grand & Majestic) -->
+  <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-foreground text-background overflow-hidden hero-pattern">
+    <!-- Decorative Grid -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 40px 40px;"></div>
+    
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-8 backdrop-blur-sm">
+        <i data-lucide="shield" class="h-4 w-4 text-primary"></i>
+        <span class="text-sm font-bold tracking-widest uppercase text-primary-foreground">Discover Our Legacy</span>
+      </div>
+      
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-black mb-8 leading-tight tracking-tight text-balance">
+        Securing the Future,<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">Empowering the World</span>
+      </h1>
+      
+      <p class="max-w-3xl mx-auto text-lg sm:text-xl text-background/70 leading-relaxed font-light">
+        We are Mr.Linuxer. A premier cybersecurity and IT solutions provider committed to delivering unbreakable digital infrastructures and innovative tech solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Company Overview (From Image Info) -->
+  <section class="py-24 bg-background relative overflow-hidden">
+    <!-- Subtle Background Blob -->
+    <div class="absolute -left-40 top-20 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Typography & Content -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="border-l-[6px] border-primary pl-6">
+            <h2 class="text-4xl sm:text-5xl font-black text-foreground mb-4">Who We Are</h2>
+            <p class="text-xl font-medium text-primary uppercase tracking-widest">Company Overview</p>
+          </div>
+          
+          <div class="prose prose-lg text-muted-foreground text-justify-my leading-relaxed">
+            <p class="text-xl text-foreground font-medium mb-6">
+              Founded in 2014, <strong class="text-primary">Mr.Linuxer</strong> has rapidly evolved from a passionate startup into a leading force in Myanmar's IT landscape.
+            </p>
+            <!-- ဤနေရာတွင် ပုံထဲမှ Company Overview စာသားများကို အစားထိုးထည့်သွင်းပါ -->
+            <p>
+              Our journey began with a simple yet profound mission: to protect and empower businesses through highly reliable, innovative, and secure technology solutions. We believe in building digital environments where businesses can thrive without the fear of cyber threats.
+            </p>
+            <p>
+              Today, with a robust team of certified professionals and industry experts, we stand as a trusted partner for enterprise-level organizations, delivering end-to-end solutions ranging from advanced penetration testing to complex custom software development.
+            </p>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-border">
+            <div>
+              <p class="text-4xl font-black text-primary mb-1">10+</p>
+              <p class="text-sm text-muted-foreground font-medium">Years Experience</p>
+            </div>
+            <div>
+              <p class="text-4xl font-black text-primary mb-1">100+</p>
+              <p class="text-sm text-muted-foreground font-medium">Projects Done</p>
+            </div>
+            <div>
+              <p class="text-4xl font-black text-primary mb-1">15+</p>
+              <p class="text-sm text-muted-foreground font-medium">IT Experts</p>
+            </div>
+            <div>
+              <p class="text-4xl font-black text-primary mb-1">24/7</p>
+              <p class="text-sm text-muted-foreground font-medium">Support Ready</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image / Visual Representation -->
+        <div class="lg:col-span-5 relative">
+          <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+            <!-- သင်၏ ရုံးခန်း (သို့) Team ပုံကို ဤနေရာတွင် အစားထိုးပါ -->
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80" alt="Mr.Linuxer Team" class="w-full h-full object-cover">
+            
+            <div class="absolute bottom-8 left-8 right-8 z-20">
+              <div class="glass-card p-6 rounded-2xl">
+                <i data-lucide="quote" class="h-8 w-8 text-primary mb-4"></i>
+                <p class="text-foreground font-medium italic text-lg">"Driven by Code, Powered by Teamwork."</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Decorative Elements -->
+          <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl -z-10"></div>
+          <div class="absolute -top-6 -left-6 w-24 h-24 bg-foreground/5 rounded-full blur-xl -z-10"></div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision (Majestic Cards) -->
+  <section class="py-24 bg-secondary relative">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-2 gap-10">
+        
+        <!-- Our Mission -->
+        <div class="group bg-card rounded-3xl p-10 sm:p-14 border border-border shadow-sm hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+          <div class="absolute right-0 top-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors duration-500"></div>
+          
+          <div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500 group-hover:rotate-6">
+            <i data-lucide="target" class="h-10 w-10 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+          </div>
+          
+          <h3 class="text-3xl sm:text-4xl font-black text-foreground mb-6">Our Mission</h3>
+          <!-- ဤနေရာတွင် ပုံထဲမှ Mission စာသားများကို အစားထိုးထည့်သွင်းပါ -->
+          <p class="text-lg text-muted-foreground leading-relaxed text-justify-my">
+            To empower organizations with uncompromising cybersecurity and cutting-edge digital solutions. We strive to create secure, reliable, and intelligent digital ecosystems that drive business growth and protect against ever-evolving modern threats.
+          </p>
+        </div>
+
+        <!-- Our Vision -->
+        <div class="group bg-card rounded-3xl p-10 sm:p-14 border border-border shadow-sm hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+          <div class="absolute right-0 top-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-primary/10 transition-colors duration-500"></div>
+          
+          <div class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-500 group-hover:-rotate-6">
+            <i data-lucide="eye" class="h-10 w-10 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+          </div>
+          
+          <h3 class="text-3xl sm:text-4xl font-black text-foreground mb-6">Our Vision</h3>
+          <!-- ဤနေရာတွင် ပုံထဲမှ Vision စာသားများကို အစားထိုးထည့်သွင်းပါ -->
+          <p class="text-lg text-muted-foreground leading-relaxed text-justify-my">
+            To be the most trusted and universally recognized technology partner in the region, setting the gold standard for IT management, cybersecurity excellence, and digital transformation through our unwavering commitment to the 5S philosophy.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-background relative overflow-hidden text-center">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <h2 class="text-3xl sm:text-5xl font-black text-foreground mb-8">Ready to Secure Your Business?</h2>
+      <p class="text-xl text-muted-foreground mb-10">Let's collaborate to build a resilient and innovative digital infrastructure.</p>
+      <a href="index.html#contact" class="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground text-lg font-bold rounded-xl hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30 hover:-translate-y-1">
+        Get in Touch With Us
+        <i data-lucide="arrow-right" class="h-5 w-5"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer (Exact Match with Home Page) -->
+  <footer class="relative bg-foreground border-t border-border">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Brand Column -->
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2 mb-6">
+            <i data-lucide="shield" class="h-8 w-8 text-primary"></i>
+            <span class="font-mono text-xl font-bold text-background">
+              Mr.<span class="text-primary">Linuxer</span>
+            </span>
+          </a>
+          <p class="text-sm text-background/70 mb-6 leading-relaxed">
+            Driven by Code, Powered by Teamwork. Your trusted partner for cybersecurity and IT solutions.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-background/10 border border-background/20 flex items-center justify-center text-background/70 hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors" aria-label="Facebook">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="index.html#services" class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
+            <li><a href="index.html#news" class="text-sm text-background/70 hover:text-primary transition-colors">News</a></li>
+            <li><a href="index.html#contact" class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Services</h3>
+          <ul class="space-y-3">
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Web Development</span></li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Mobile Apps</span></li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Cybersecurity</span></li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">AI Solutions</span></li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Consulting</span></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Contact</h3>
+          <ul class="space-y-4">
+            <li>
+              <a href="mailto:hello@mrlinuxer.net" class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
+                <i data-lucide="mail" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
+                <span>hello@mrlinuxer.net</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+959260438525" class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
+                <i data-lucide="phone" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
+                <span>+(95) 9260438525</span>
+              </a>
+            </li>
+            <li>
+              <div class="flex items-start gap-3 text-sm text-background/70">
+                <i data-lucide="map-pin" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
+                <span>Nay Pyi Taw, Myanmar</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-background/20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-sm text-background/70">
+            &copy; <span id="currentYear"></span> Mr.Linuxer. All rights reserved.
+          </p>
+          <div class="flex items-center gap-6 text-sm text-background/70">
+            <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    let isMenuOpen = false;
+
+    mobileMenuBtn.addEventListener('click', () => {
+      isMenuOpen = !isMenuOpen;
+      mobileMenu.classList.toggle('open');
+      menuIcon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+      lucide.createIcons();
+    });
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 50) {
+        header.classList.add('shadow-md');
+      } else {
+        header.classList.remove('shadow-md');
+      }
+    });
+
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
