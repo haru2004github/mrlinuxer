@@ -36,7 +36,7 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="icon" href="./img/Mr Linuxer Logo..png">
+    <link rel="icon" href="./img/mrlinuxer.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap"
@@ -142,25 +142,42 @@
             visibility: hidden;
         }
 
-        .loader-logo {
-            width: 80px;
-            height: auto;
-            animation: pulse 1.5s infinite ease-in-out;
-            margin-bottom: 20px;
+        .loader-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 160px;
+            height: 160px;
+            background: #000; /* Deep black circle */
+            border-radius: 50%;
+            margin-bottom: 30px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
         }
 
-        @keyframes pulse {
+        .loader-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            clip-path: circle(44%); /* Hide the original yellow ring from PNG */
+            z-index: 10;
+        }
 
-            0%,
-            100% {
-                transform: scale(0.95);
-                opacity: 0.8;
-            }
+        .loader-ring {
+            position: absolute;
+            width: 195px;
+            height: 195px;
+            border: 15px solid #fbbf24; /* Extra thick yellow */
+            border-top-color: transparent; /* The distinct gap */
+            border-radius: 50%;
+            animation: spin-pause 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            z-index: 5;
+        }
 
-            50% {
-                transform: scale(1.05);
-                opacity: 1;
-            }
+        @keyframes spin-pause {
+            0% { transform: rotate(0deg); }
+            40% { transform: rotate(315deg); } /* One full turn in 1.2s */
+            100% { transform: rotate(320deg); } /* Wait for 1.8s */
         }
 
         .mobile-menu.open {
@@ -237,11 +254,11 @@
 
 <body class="antialiased">
 
-    <!-- Loading Screen -->
+    <!-- Page Loader -->
     <div id="loader-wrapper">
-        <img src="./img/Mr Linuxer Logo..png" alt="Mr. Linuxer Logo" class="loader-logo">
-        <div class="w-48 h-1.5 bg-secondary rounded-full overflow-hidden">
-            <div class="h-full bg-primary animate-[loading_2s_ease-in-out_infinite] origin-left"></div>
+        <div class="loader-container">
+            <div class="loader-ring"></div>
+            <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="loader-logo">
         </div>
     </div>
 
@@ -252,7 +269,7 @@
             <div class="flex h-16 items-center justify-between">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-2">
-                    <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo"
+                    <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo"
                         class="h-10 sm:h-12 w-auto object-contain">
                 </a>
 
@@ -371,7 +388,7 @@
                 <!-- Brand Column -->
                 <div class="col-span-2 md:col-span-1">
                     <a href="index.html" class="flex items-center gap-2">
-                        <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo"
+                        <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo"
                             class="h-10 sm:h-12 w-auto object-contain">
                     </a>
                     <p class="mt-5 text-sm text-background/70 mb-6 leading-relaxed">
@@ -520,7 +537,7 @@
 
         // Fetch Data from Google Sheets (Same as News)
         async function fetchBlogPosts() {
-            const sheetId = '1FprMM_WcAz9_495HE2Nu1xI64Ymz-NKc9HK2PMAlBBQ';
+            const sheetId = '1Xr4JQOqotlCiYA5aurepvPj_6ZJq9d0QZ1b2EWzcorc';
             const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
 
             try {
@@ -543,8 +560,8 @@
                 let titleIdx = -1, detailIdx = -1, imageIdx = -1;
                 headers.forEach((label, idx) => {
                     if (!label) return;
-                    if (titleIdx === -1 && (label.includes('title') || label.includes('ခေါင်းစဉ်'))) titleIdx = idx;
-                    else if (detailIdx === -1 && (label.includes('detail') || label.includes('description') || label.includes('content') || label.includes('အကြောင်းအရာ'))) detailIdx = idx;
+                    if (titleIdx === -1 && (label.includes('title'))) titleIdx = idx;
+                    else if (detailIdx === -1 && (label.includes('detail') || label.includes('description') || label.includes('content'))) detailIdx = idx;
                     else if (imageIdx === -1 && (label.includes('photo') || label.includes('image') || label.includes('cover'))) imageIdx = idx;
                 });
 
@@ -559,7 +576,7 @@
                 blogContainer.innerHTML = '';
 
                 if (blogRows.length === 0) {
-                    blogContainer.innerHTML = `<div class="col-span-full text-center text-muted-foreground py-24">လက်ရှိတွင် ဆောင်းပါးများ မရှိသေးပါ။</div>`;
+                    blogContainer.innerHTML = `<div class="col-span-full text-center text-muted-foreground py-24">No articles available at the moment.</div>`;
                     return;
                 }
 
@@ -631,7 +648,7 @@
                                     </div>
                                     <div class="flex -space-x-2">
                                         <div class="w-8 h-8 rounded-full border-2 border-white bg-secondary flex items-center justify-center overflow-hidden">
-                                            <img src="./img/Mr Linuxer Logo..png" class="w-5 h-5 object-contain">
+                                            <img src="./img/mrlinuxer.png" class="w-5 h-5 object-contain">
                                         </div>
                                     </div>
                                 </div>
@@ -645,7 +662,7 @@
 
             } catch (error) {
                 console.error('Error:', error);
-                document.getElementById('blog-container').innerHTML = `<div class="col-span-full text-center py-24"><p class="text-muted-foreground">ဒေတာရယူရာတွင် အခက်အခဲရှိနေပါသည်။</p></div>`;
+                document.getElementById('blog-container').innerHTML = `<div class="col-span-full text-center py-24"><p class="text-muted-foreground">Error fetching data.</p></div>`;
             }
         }
 
@@ -685,7 +702,7 @@
             if (otherPosts.length > 0) {
                 relatedPostsHtml = `
                 <div class="mt-16 pt-12 border-t border-border">
-                    <h3 class="text-2xl sm:text-3xl font-bold mb-8 border-l-[6px] border-primary pl-5 text-foreground">ဆက်စပ်ဆောင်းပါးများ</h3>
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-8 border-l-[6px] border-primary pl-5 text-foreground">Related Articles</h3>
                     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     ${otherPosts.map(p => {
                     const excerpt = String(p.detail).length > 80 ? String(p.detail).substring(0, 80) + '...' : p.detail;
@@ -714,7 +731,7 @@
                     </button>
                     
                     <button onclick="closeBlogDetail()" class="mb-12 inline-flex items-center gap-2 text-sm font-bold text-foreground hover:text-primary transition-colors px-4 py-2 rounded-lg bg-card border border-border shadow-sm group">
-                        <i data-lucide="arrow-left" class="h-4 w-4 group-hover:-translate-x-1 transition-transform"></i> ဆောင်းပါးများသို့ ပြန်သွားရန်
+                        <i data-lucide="arrow-left" class="h-4 w-4 group-hover:-translate-x-1 transition-transform"></i> Back to Articles
                     </button>
                     
                     <article class="bg-card rounded-[2.5rem] border border-border p-8 sm:p-12 shadow-2xl">
@@ -725,7 +742,7 @@
                             </h1>
                             <div class="flex items-center justify-center gap-4 py-6 border-y border-border/50">
                                 <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
-                                    <img src="./img/Mr Linuxer Logo..png" class="w-8 h-8 object-contain">
+                                    <img src="./img/mrlinuxer.png" class="w-8 h-8 object-contain">
                                 </div>
                                 <div class="text-left">
                                     <p class="text-sm font-bold text-foreground">Mr.Linuxer Team</p>
@@ -746,7 +763,7 @@
                         
                         <div class="mt-16 pt-12 border-t border-border flex justify-center">
                             <button onclick="closeBlogDetail()" class="inline-flex items-center gap-2 text-lg font-bold text-primary-foreground bg-primary hover:bg-primary/90 transition-all px-10 py-4 rounded-xl shadow-lg hover:shadow-primary/25 group">
-                                <i data-lucide="arrow-left" class="h-5 w-5 group-hover:-translate-x-1 transition-transform"></i> ဆောင်းပါးများသို့ ပြန်သွားရန်
+                                <i data-lucide="arrow-left" class="h-5 w-5 group-hover:-translate-x-1 transition-transform"></i> Back to Articles
                             </button>
                         </div>
                     </article>
@@ -772,19 +789,27 @@
                     revealObserver.unobserve(entry.target); // Trigger only once
                 }
             });
-        }, { threshold: 0.1 });
-
-        // Page Loader Logic
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader-wrapper');
-            setTimeout(() => {
-                loader.classList.add('fade-out');
-                // Start observing after loader is gone
-                document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-            }, 800);
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
         });
 
-        document.addEventListener('DOMContentLoaded', fetchBlogPosts);
+        // Global Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader-wrapper');
+            if (loader) {
+                // Ensure at least one full cycle (3s) even if page loads instantly
+                setTimeout(() => {
+                    loader.classList.add('fade-out');
+                }, 3000); 
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start observing scroll reveal elements
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+            fetchBlogPosts();
+        });
     </script>
 </body>
 

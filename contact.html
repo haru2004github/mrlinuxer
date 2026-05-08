@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,10 @@
     gtag('config', 'G-Y7SVY5C21T');
   </script>
   <title>Contact Us | Mr.Linuxer - Get Expert IT Consultation</title>
-  <meta name="description" content="Have a project in mind? Contact Mr.Linuxer today for expert consultation on cybersecurity, web development, and AI solutions. We're here to help you succeed.">
-  <meta name="keywords" content="contact Mr.Linuxer, IT consultation Myanmar, hire cybersecurity expert, web development inquiry">
+  <meta name="description"
+    content="Have a project in mind? Contact Mr.Linuxer today for expert consultation on cybersecurity, web development, and AI solutions. We're here to help you succeed.">
+  <meta name="keywords"
+    content="contact Mr.Linuxer, IT consultation Myanmar, hire cybersecurity expert, web development inquiry">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://mrlinuxer.com/contact.html">
 
@@ -22,22 +25,26 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mrlinuxer.com/contact.html">
   <meta property="og:title" content="Contact Us | Mr.Linuxer - Get Expert IT Consultation">
-  <meta property="og:description" content="Connect with the Mr.Linuxer team. Let's discuss how we can secure and grow your digital presence.">
+  <meta property="og:description"
+    content="Connect with the Mr.Linuxer team. Let's discuss how we can secure and grow your digital presence.">
   <meta property="og:image" content="https://mrlinuxer.com/img/hero.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://mrlinuxer.com/contact.html">
   <meta property="twitter:title" content="Contact Us | Mr.Linuxer - Get Expert IT Consultation">
-  <meta property="twitter:description" content="Connect with the Mr.Linuxer team. Let's discuss how we can secure and grow your digital presence.">
+  <meta property="twitter:description"
+    content="Connect with the Mr.Linuxer team. Let's discuss how we can secure and grow your digital presence.">
   <meta property="twitter:image" content="https://mrlinuxer.com/img/hero.png">
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" href="./img/Mr Linuxer Logo..png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap"
+    rel="stylesheet">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -65,20 +72,38 @@
       },
     }
   </script>
-  
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background-color: #fafafa; color: #171717; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafafa;
+      color: #171717;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
     /* Smooth scrolling */
-    html { scroll-behavior: smooth; }
-    
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* Mobile menu transition */
-    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
     .mobile-menu.open {
       max-height: 400px;
     }
@@ -117,41 +142,82 @@
       visibility: hidden;
     }
 
-    .loader-logo {
-      width: 80px;
-      height: auto;
-      animation: pulse 1.5s infinite ease-in-out;
-      margin-bottom: 20px;
+    .loader-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 160px;
+      height: 160px;
+      background: #000;
+      /* Deep black circle */
+      border-radius: 50%;
+      margin-bottom: 30px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     }
 
-    @keyframes pulse {
+    .loader-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      clip-path: circle(44%);
+      /* Hide the original yellow ring from PNG */
+      z-index: 10;
+    }
 
-      0%,
+    .loader-ring {
+      position: absolute;
+      width: 195px;
+      height: 195px;
+      border: 15px solid #fbbf24;
+      /* Extra thick yellow */
+      border-top-color: transparent;
+      /* The distinct gap */
+      border-radius: 50%;
+      animation: spin-pause 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      z-index: 5;
+    }
+
+    @keyframes spin-pause {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      40% {
+        transform: rotate(315deg);
+      }
+
+      /* One full turn in 1.2s */
       100% {
-        transform: scale(0.95);
-        opacity: 0.8;
+        transform: rotate(320deg);
       }
 
-      50% {
-        transform: scale(1.05);
-        opacity: 1;
-      }
+      /* Wait for 1.8s */
     }
 
     /* Grand Hero Background */
     .hero-pattern {
-      background-image: radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.1) 0, transparent 50%), 
-                        radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.05) 0, transparent 50%);
+      background-image: radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.1) 0, transparent 50%),
+        radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.05) 0, transparent 50%);
     }
-    
+
     /* Floating Animation for Header Icons */
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
+
     .animate-float {
       animation: float 4s ease-in-out infinite;
     }
+
     .animate-float-delayed {
       animation: float 4s ease-in-out infinite 2s;
     }
@@ -168,47 +234,59 @@
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
-    p { line-height: 1.75; }
+
+    p {
+      line-height: 1.75;
+    }
   </style>
 </head>
+
 <body class="bg-background text-foreground selection:bg-primary/20 selection:text-primary">
   <!-- Page Loader -->
   <div id="loader-wrapper">
-    <img src="./img/Mr Linuxer Logo..png" alt="Loading..." class="loader-logo">
-    <div class="w-48 h-1.5 bg-secondary rounded-full overflow-hidden">
-      <div class="h-full bg-primary animate-[loading_2s_ease-in-out_infinite] origin-left"></div>
+    <div class="loader-container">
+      <div class="loader-ring"></div>
+      <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="loader-logo">
     </div>
   </div>
 
   <!-- Header -->
- <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
+  <header id="header"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <!-- Logo -->
         <a href="index.html" class="flex items-center gap-2">
-          <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
+          <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
         </a>
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Home</a>
-          <a href="about.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">About</a>
-          <a href="services.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Services</a>
-          <a href="news.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">News</a>
-          <a href="blog.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Blogs</a>
+          <a href="index.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Home</a>
+          <a href="about.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">About</a>
+          <a href="services.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Services</a>
+          <a href="news.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">News</a>
+          <a href="blog.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Blogs</a>
           <a href="contact.html" class="text-sm font-medium text-primary transition-colors">Contact</a>
         </nav>
 
         <!-- Right Side Actions -->
         <div class="flex items-center gap-4">
           <!-- CTA Button -->
-          <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
+          <a href="contact.html"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
             Get Started
             <i data-lucide="arrow-right" class="h-4 w-4"></i>
           </a>
 
           <!-- Mobile Menu Button -->
-          <button id="mobileMenuBtn" class="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors">
+          <button id="mobileMenuBtn"
+            class="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors">
             <i data-lucide="menu" class="h-6 w-6" id="menuIcon"></i>
           </button>
         </div>
@@ -217,15 +295,22 @@
       <!-- Mobile Navigation -->
       <div id="mobileMenu" class="mobile-menu md:hidden">
         <nav class="flex flex-col gap-2 py-4 border-t border-border">
-          <a href="index.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
-          <a href="about.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
-          <a href="services.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Services</a>
-          <a href="news.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
-          <a href="blog.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
-          <a href="contact.html" class="px-4 py-2 text-sm font-medium text-primary bg-secondary rounded-lg transition-colors">Contact</a>
+          <a href="index.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
+          <a href="about.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
+          <a href="services.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Services</a>
+          <a href="news.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
+          <a href="blog.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
+          <a href="contact.html"
+            class="px-4 py-2 text-sm font-medium text-primary bg-secondary rounded-lg transition-colors">Contact</a>
 
           <div class="px-4 pt-2 border-t border-border mt-2">
-            <a href="contact.html" class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
+            <a href="contact.html"
+              class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
               Get Started
               <i data-lucide="arrow-right" class="h-4 w-4"></i>
             </a>
@@ -236,9 +321,12 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-foreground text-background overflow-hidden hero-pattern reveal">
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 40px 40px;"></div>
-    
+  <section
+    class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-foreground text-background overflow-hidden hero-pattern reveal">
+    <div class="absolute inset-0 opacity-[0.03]"
+      style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+
     <!-- Floating Icons -->
     <div class="absolute top-1/4 left-1/4 text-primary/20 animate-float hidden lg:block">
       <i data-lucide="mail" class="h-16 w-16"></i>
@@ -248,17 +336,20 @@
     </div>
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-8 backdrop-blur-sm">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-8 backdrop-blur-sm">
         <i data-lucide="message-square" class="h-4 w-4 text-primary"></i>
         <span class="text-sm font-medium tracking-widest uppercase text-primary-foreground">We are here for you</span>
       </div>
-      
+
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance">
-        Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">Connect</span> & Secure
+        Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">Connect</span> &
+        Secure
       </h1>
-      
+
       <p class="max-w-2xl mx-auto text-base sm:text-lg text-background/70 mb-10 leading-relaxed text-pretty">
-        Ready to strengthen your cybersecurity posture? Get in touch with our expert team for a consultation and transform your digital challenges into opportunities.
+        Ready to strengthen your cybersecurity posture? Get in touch with our expert team for a consultation and
+        transform your digital challenges into opportunities.
       </p>
     </div>
   </section>
@@ -272,52 +363,73 @@
     </div>
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-      
+
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-        
+
         <!-- Left Side: Contact Cards (5 Columns width on Large Screens) -->
         <div class="lg:col-span-5 space-y-6">
-          
+
           <!-- Heading -->
           <div class="mb-10">
-            <h2 class="text-3xl sm:text-4xl font-black text-foreground mb-4">Contact <span class="text-primary">Details</span></h2>
-            <p class="text-muted-foreground text-lg">Feel free to reach out to us through any of the following channels.</p>
+            <h2 class="text-3xl sm:text-4xl font-black text-foreground mb-4">Contact <span
+                class="text-primary">Details</span></h2>
+            <p class="text-muted-foreground text-lg">Feel free to reach out to us through any of the following channels.
+            </p>
           </div>
 
           <!-- Email Card -->
-          <a href="mailto:hello@mrlinuxer.net" class="group block bg-card/90 backdrop-blur-xl rounded-[2rem] p-6 sm:p-8 border border-border hover:border-primary/40 shadow-sm hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-500 hover:-translate-y-1 relative overflow-hidden">
-            <div class="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[30px] group-hover:scale-150 transition-transform duration-700 ease-out z-0"></div>
+          <a href="mailto:hello@mrlinuxer.net"
+            class="group block bg-card/90 backdrop-blur-xl rounded-[2rem] p-6 sm:p-8 border border-border hover:border-primary/40 shadow-sm hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-500 hover:-translate-y-1 relative overflow-hidden">
+            <div
+              class="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[30px] group-hover:scale-150 transition-transform duration-700 ease-out z-0">
+            </div>
             <div class="relative z-10 flex items-center gap-6">
-              <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:shadow-md transition-all duration-500 group-hover:scale-110 shrink-0">
-                <i data-lucide="mail" class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+              <div
+                class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:shadow-md transition-all duration-500 group-hover:scale-110 shrink-0">
+                <i data-lucide="mail"
+                  class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
               </div>
               <div>
                 <h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Email Us</h4>
-                <p class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300">hello@mrlinuxer.net</p>
+                <p
+                  class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                  hello@mrlinuxer.net</p>
               </div>
             </div>
           </a>
 
           <!-- Phone Card -->
-          <a href="tel:+959260438525" class="group block bg-card/90 backdrop-blur-xl rounded-[2rem] p-6 sm:p-8 border border-border hover:border-primary/40 shadow-sm hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-500 hover:-translate-y-1 relative overflow-hidden">
-            <div class="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[30px] group-hover:scale-150 transition-transform duration-700 ease-out z-0"></div>
+          <a href="tel:+959260438525"
+            class="group block bg-card/90 backdrop-blur-xl rounded-[2rem] p-6 sm:p-8 border border-border hover:border-primary/40 shadow-sm hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-500 hover:-translate-y-1 relative overflow-hidden">
+            <div
+              class="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[30px] group-hover:scale-150 transition-transform duration-700 ease-out z-0">
+            </div>
             <div class="relative z-10 flex items-center gap-6">
-              <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:shadow-md transition-all duration-500 group-hover:scale-110 shrink-0">
-                <i data-lucide="phone" class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+              <div
+                class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:shadow-md transition-all duration-500 group-hover:scale-110 shrink-0">
+                <i data-lucide="phone"
+                  class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
               </div>
               <div>
                 <h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Call Us</h4>
-                <p class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300">+(95) 9260438525</p>
+                <p
+                  class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+                  +(95) 9260438525</p>
               </div>
             </div>
           </a>
 
           <!-- Location Card -->
-          <div class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-6 sm:p-8 border border-border shadow-sm hover:border-primary/40 hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-500 relative overflow-hidden">
-            <div class="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[30px] group-hover:scale-150 transition-transform duration-700 ease-out z-0"></div>
+          <div
+            class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-6 sm:p-8 border border-border shadow-sm hover:border-primary/40 hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-500 relative overflow-hidden">
+            <div
+              class="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[30px] group-hover:scale-150 transition-transform duration-700 ease-out z-0">
+            </div>
             <div class="relative z-10 flex items-center gap-6">
-              <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:shadow-md transition-all duration-500 group-hover:scale-110 shrink-0">
-                <i data-lucide="map-pin" class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+              <div
+                class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:shadow-md transition-all duration-500 group-hover:scale-110 shrink-0">
+                <i data-lucide="map-pin"
+                  class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
               </div>
               <div>
                 <h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Location</h4>
@@ -327,11 +439,16 @@
           </div>
 
           <!-- Office Hours Card -->
-          <div class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-6 sm:p-8 border border-border shadow-sm hover:border-primary/40 hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-500 relative overflow-hidden">
-            <div class="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[30px] group-hover:scale-150 transition-transform duration-700 ease-out z-0"></div>
+          <div
+            class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-6 sm:p-8 border border-border shadow-sm hover:border-primary/40 hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-500 relative overflow-hidden">
+            <div
+              class="absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[30px] group-hover:scale-150 transition-transform duration-700 ease-out z-0">
+            </div>
             <div class="relative z-10 flex items-center gap-6">
-              <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:shadow-md transition-all duration-500 group-hover:scale-110 shrink-0">
-                <i data-lucide="clock" class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+              <div
+                class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:shadow-md transition-all duration-500 group-hover:scale-110 shrink-0">
+                <i data-lucide="clock"
+                  class="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
               </div>
               <div>
                 <h4 class="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-1">Office Hours</h4>
@@ -344,23 +461,22 @@
 
         <!-- Right Side: The Grand Map Container (7 Columns width on Large Screens) -->
         <div class="lg:col-span-7 h-full min-h-[500px]">
-          <div class="group relative w-full h-full min-h-[500px] lg:min-h-[700px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-border/60 transition-all duration-500 hover:border-primary/50">
+          <div
+            class="group relative w-full h-full min-h-[500px] lg:min-h-[700px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-border/60 transition-all duration-500 hover:border-primary/50">
             <!-- Glass Map Overlay Effect for Elegance -->
-            <div class="absolute inset-0 glass-map-overlay pointer-events-none z-10 opacity-50 group-hover:opacity-0 transition-opacity duration-700"></div>
-            
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.16467332247!2d96.06558235!3d19.74928275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c8b9d79c6d3761%3A0x86bd71ed4cce314!2sNaypyidaw%2C%20Myanmar%20(Burma)!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
-              width="100%" 
-              height="100%" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy" 
+            <div
+              class="absolute inset-0 glass-map-overlay pointer-events-none z-10 opacity-50 group-hover:opacity-0 transition-opacity duration-700">
+            </div>
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120562.16467332247!2d96.06558235!3d19.74928275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c8b9d79c6d3761%3A0x86bd71ed4cce314!2sNaypyidaw%2C%20Myanmar%20(Burma)!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              class="absolute inset-0 w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
-            ></iframe>
-            
+              class="absolute inset-0 w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"></iframe>
+
             <!-- Map Decorative Pin inside corner -->
-            <div class="absolute bottom-6 right-6 bg-background/90 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl z-20 flex items-center gap-4 border border-border">
+            <div
+              class="absolute bottom-6 right-6 bg-background/90 backdrop-blur-md px-6 py-4 rounded-2xl shadow-xl z-20 flex items-center gap-4 border border-border">
               <div class="relative flex h-3 w-3">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
@@ -376,39 +492,52 @@
 
   <!-- Social Media Majestic Banner -->
   <section class="py-16 bg-secondary relative overflow-hidden border-t border-border/50">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 32px 32px; color: #dc2626;"></div>
-    
+    <div class="absolute inset-0 opacity-10"
+      style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 32px 32px; color: #dc2626;">
+    </div>
+
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       <h2 class="text-2xl sm:text-3xl font-bold text-foreground mb-8">Follow Our Journey</h2>
-      
-      <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-4 px-8 py-5 bg-card border border-border shadow-md rounded-2xl hover:shadow-[0_15px_35px_-5px_rgba(24,119,242,0.25)] hover:border-[#1877F2]/50 transition-all duration-500 hover:-translate-y-1">
-        <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-muted-foreground group-hover:bg-[#1877F2]/10 group-hover:text-[#1877F2] transition-colors duration-500">
-          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+
+      <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer"
+        class="group inline-flex items-center gap-4 px-8 py-5 bg-card border border-border shadow-md rounded-2xl hover:shadow-[0_15px_35px_-5px_rgba(24,119,242,0.25)] hover:border-[#1877F2]/50 transition-all duration-500 hover:-translate-y-1">
+        <div
+          class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-muted-foreground group-hover:bg-[#1877F2]/10 group-hover:text-[#1877F2] transition-colors duration-500">
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg>
         </div>
         <div class="text-left">
           <p class="text-sm font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Facebook Page</p>
           <p class="text-xl font-black text-foreground group-hover:text-[#1877F2] transition-colors">Mr.Linuxer</p>
         </div>
-        <i data-lucide="chevron-right" class="h-6 w-6 text-muted-foreground ml-4 group-hover:translate-x-2 group-hover:text-[#1877F2] transition-all duration-500"></i>
+        <i data-lucide="chevron-right"
+          class="h-6 w-6 text-muted-foreground ml-4 group-hover:translate-x-2 group-hover:text-[#1877F2] transition-all duration-500"></i>
       </a>
     </div>
   </section>
 
   <!-- Footer -->
-   <footer class="relative bg-foreground border-t border-border reveal">
+  <footer class="relative bg-foreground border-t border-border reveal">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <!-- Brand Column -->
         <div class="col-span-2 md:col-span-1">
           <a href="index.html" class="flex items-center gap-2">
-          <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
-        </a>
+            <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
+          </a>
           <p class="mt-5 text-sm text-background/70 mb-6 leading-relaxed">
             Driven by Code, Powered by Teamwork. Your trusted partner for cybersecurity and IT solutions.
           </p>
           <div class="flex gap-3">
-            <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-background/10 border border-background/20 flex items-center justify-center text-background/70 hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors" aria-label="Facebook">
-              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-lg bg-background/10 border border-background/20 flex items-center justify-center text-background/70 hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors"
+              aria-label="Facebook">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
             </a>
           </div>
         </div>
@@ -417,12 +546,18 @@
         <div>
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Quick Links</h3>
           <ul class="space-y-3">
-            <li><a href="index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a></li>
-            <li><a href="about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About Us</a></li>
-            <li><a href="services.html" class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
-            <li><a href="news.html" class="text-sm text-background/70 hover:text-primary transition-colors">News</a></li>
-            <li><a href="blog.html" class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a></li>
-            <li><a href="contact.html" class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
+            <li><a href="index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a>
+            </li>
+            <li><a href="about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About
+                Us</a></li>
+            <li><a href="services.html"
+                class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
+            <li><a href="news.html" class="text-sm text-background/70 hover:text-primary transition-colors">News</a>
+            </li>
+            <li><a href="blog.html" class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a>
+            </li>
+            <li><a href="contact.html"
+                class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
           </ul>
         </div>
 
@@ -430,11 +565,18 @@
         <div>
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Services</h3>
           <ul class="space-y-3">
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Web Development</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Mobile Apps</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Cybersecurity</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">AI Solutions</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Consulting</span></li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Web
+                Development</span></li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Mobile
+                Apps</span></li>
+            <li><span
+                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Cybersecurity</span>
+            </li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">AI
+                Solutions</span></li>
+            <li><span
+                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Consulting</span>
+            </li>
           </ul>
         </div>
 
@@ -443,13 +585,15 @@
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Contact</h3>
           <ul class="space-y-4">
             <li>
-              <a href="mailto:hello@mrlinuxer.net" class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
+              <a href="mailto:hello@mrlinuxer.net"
+                class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
                 <i data-lucide="mail" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
                 <span>hello@mrlinuxer.net</span>
               </a>
             </li>
             <li>
-              <a href="tel:+959260438525" class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
+              <a href="tel:+959260438525"
+                class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
                 <i data-lucide="phone" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
                 <span>+(95) 9260438525</span>
               </a>
@@ -483,13 +627,7 @@
 
 
   <!-- JavaScript -->
-  <style>
-    @keyframes loading {
-      0% { transform: scaleX(0); }
-      50% { transform: scaleX(1); }
-      100% { transform: scaleX(0); transform-origin: right; }
-    }
-  </style>
+
   <script>
     // Scroll Reveal Logic
     const revealObserver = new IntersectionObserver((entries) => {
@@ -499,42 +637,52 @@
           revealObserver.unobserve(entry.target); // Trigger only once
         }
       });
-    }, { threshold: 0.1 });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
 
-    // Page Loader Logic
+    // Global Loader
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader-wrapper');
-      setTimeout(() => {
-        loader.classList.add('fade-out');
-        // Start observing after loader is gone
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-      }, 800);
-    });
-
-    lucide.createIcons();
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuIcon = document.getElementById('menuIcon');
-    let isMenuOpen = false;
-
-    mobileMenuBtn.addEventListener('click', () => {
-      isMenuOpen = !isMenuOpen;
-      mobileMenu.classList.toggle('open');
-      menuIcon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
-      lucide.createIcons();
-    });
-
-    window.addEventListener('scroll', () => {
-      const header = document.getElementById('header');
-      if (window.pageYOffset > 50) {
-        header.classList.add('shadow-md');
-      } else {
-        header.classList.remove('shadow-md');
+      if (loader) {
+        // Ensure at least one full cycle (3s) even if page loads instantly
+        setTimeout(() => {
+          loader.classList.add('fade-out');
+        }, 3000);
       }
     });
 
-    const yearEl = document.getElementById('currentYear');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', () => {
+      // Start observing scroll reveal elements
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+      lucide.createIcons();
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+      let isMenuOpen = false;
+
+      mobileMenuBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle('open');
+        menuIcon.setAttribute('data-lucide', isMenuOpen ? 'x' : 'menu');
+        lucide.createIcons();
+      });
+
+      window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+        if (window.pageYOffset > 50) {
+          header.classList.add('shadow-md');
+        } else {
+          header.classList.remove('shadow-md');
+        }
+      });
+
+      const yearEl = document.getElementById('currentYear');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
   </script>
 </body>
+
 </html>
