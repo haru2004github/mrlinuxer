@@ -30,7 +30,7 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="icon" href="./img/Mr Linuxer Logo..png">
+    <link rel="icon" href="./img/mrlinuxer.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap"
@@ -178,26 +178,43 @@
             visibility: hidden;
         }
 
-        .loader-logo {
-            width: 80px;
-            height: auto;
-            animation: pulse 1.5s infinite ease-in-out;
-            margin-bottom: 20px;
-        }
+    .loader-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 160px;
+      height: 160px;
+      background: #000; /* Deep black circle */
+      border-radius: 50%;
+      margin-bottom: 30px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    }
 
-        @keyframes pulse {
+    .loader-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      clip-path: circle(44%); /* Hide the original yellow ring from PNG */
+      z-index: 10;
+    }
 
-            0%,
-            100% {
-                transform: scale(0.95);
-                opacity: 0.8;
-            }
+    .loader-ring {
+      position: absolute;
+      width: 195px;
+      height: 195px;
+      border: 15px solid #fbbf24; /* Extra thick yellow */
+      border-top-color: transparent; /* The distinct gap */
+      border-radius: 50%;
+      animation: spin-pause 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      z-index: 5;
+    }
 
-            50% {
-                transform: scale(1.05);
-                opacity: 1;
-            }
-        }
+    @keyframes spin-pause {
+      0% { transform: rotate(0deg); }
+      40% { transform: rotate(315deg); } /* One full turn in 1.2s */
+      100% { transform: rotate(320deg); } /* Wait for 1.8s */
+    }
 
         /* Typography Polish */
         body {
@@ -215,9 +232,9 @@
 <body class="bg-background text-foreground selection:bg-primary/20 selection:text-primary">
     <!-- Page Loader -->
     <div id="loader-wrapper">
-        <img src="./img/Mr Linuxer Logo..png" alt="Loading..." class="loader-logo">
-        <div class="w-48 h-1 bg-secondary rounded-full overflow-hidden">
-            <div class="h-full bg-primary animate-[marquee_2s_linear_infinite] w-1/2 rounded-full"></div>
+        <div class="loader-container">
+            <div class="loader-ring"></div>
+            <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="loader-logo">
         </div>
     </div>
 
@@ -228,7 +245,7 @@
             <div class="flex h-16 items-center justify-between">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-2">
-                    <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo"
+                    <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo"
                         class="h-10 sm:h-12 w-auto object-contain">
                 </a>
 
@@ -349,7 +366,7 @@
                 <!-- Brand Column -->
                 <div class="col-span-2 md:col-span-1">
                     <a href="index.html" class="flex items-center gap-2">
-                        <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo"
+                        <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo"
                             class="h-10 sm:h-12 w-auto object-contain">
                     </a>
                     <p class="mt-5 text-sm text-background/70 mb-6 leading-relaxed">
@@ -524,9 +541,9 @@
 
                 headers.forEach((label, idx) => {
                     if (!label) return;
-                    if (titleIdx === -1 && (label.includes('title') || label.includes('ခေါင်းစဉ်'))) titleIdx = idx;
-                    else if (detailIdx === -1 && (label.includes('detail') || label.includes('description') || label.includes('content') || label.includes('အကြောင်းအရာ') || label.includes('စာသား'))) detailIdx = idx;
-                    else if (imageIdx === -1 && (label.includes('photo') || label.includes('image') || label.includes('cover') || label.includes('ပုံ') || label.includes('file'))) imageIdx = idx;
+                    if (titleIdx === -1 && (label.includes('title'))) titleIdx = idx;
+                    else if (detailIdx === -1 && (label.includes('detail') || label.includes('description') || label.includes('content'))) detailIdx = idx;
+                    else if (imageIdx === -1 && (label.includes('photo') || label.includes('image') || label.includes('cover') || label.includes('file'))) imageIdx = idx;
                 });
 
                 if (titleIdx === -1) titleIdx = 2;
@@ -541,7 +558,7 @@
                 newsContainer.innerHTML = '';
 
                 if (newsRows.length === 0) {
-                    newsContainer.innerHTML = `<div class="col-span-full text-center text-muted-foreground py-24">လက်ရှိတွင် သတင်းများ မရှိသေးပါ။</div>`;
+                    newsContainer.innerHTML = `<div class="col-span-full text-center text-muted-foreground py-24">No news available at the moment.</div>`;
                     return;
                 }
 
@@ -581,7 +598,7 @@
                     headers.forEach((label, idx) => {
                         if (idx === titleIdx || idx === detailIdx || idx === imageIdx) return;
                         if (idx <= 3) return;
-                        if (label.includes('author') || label.includes('ရေးသားသူ') || label.includes('name') || label.includes('အမည်')) return;
+                        if (label.includes('author') || label.includes('name')) return;
 
                         let cellValue = row.c[idx]?.v;
                         if (!cellValue) return;
@@ -595,7 +612,7 @@
                             }
                         }
 
-                        if (label.includes('title') || label.includes('ခေါင်းစဉ်') || label.includes('subtitle') || (strValue.length > 0 && strValue.length < 80)) {
+                        if (label.includes('title') || label.includes('subtitle') || (strValue.length > 0 && strValue.length < 80)) {
                             dynamicSections.push({ type: 'heading', text: strValue });
                         } else {
                             dynamicSections.push({ type: 'paragraph', text: strValue });
@@ -648,7 +665,7 @@
                 document.getElementById('news-container').innerHTML = `
           <div class="col-span-full text-center py-24">
             <i data-lucide="alert-circle" class="h-12 w-12 text-red-500 mx-auto mb-4"></i>
-            <p class="text-muted-foreground">ဒေတာရယူရာတွင် အခက်အခဲရှိနေပါသည်။ နောက်မှ ထပ်မံကြိုးစားကြည့်ပေးပါ။</p>
+            <p class="text-muted-foreground">Error fetching data. Please try again later.</p>
           </div>
         `;
                 if (typeof lucide !== 'undefined') lucide.createIcons();
@@ -685,13 +702,13 @@
 
             const formattedMain = post.detail.split('\n').map(p => p.trim()).filter(p => p.length > 0).map(p => `<p class="mb-6">${p}</p>`).join('');
 
-            // အခြားဖတ်ရှုရန် သတင်းများ (Preview Posts) - လက်ရှိသတင်းမှလွဲ၍ ကျန်သောသတင်းများကို ယူမည်
+            // Other News to Read (Preview Posts)
             const otherPosts = globalNewsData.filter(p => p.id !== id).slice(0, 3);
             let relatedPostsHtml = '';
             if (otherPosts.length > 0) {
                 relatedPostsHtml = `
                 <div class="mt-16 pt-12 border-t border-border">
-                    <h3 class="text-2xl sm:text-3xl font-bold mb-8 border-l-[6px] border-primary pl-5 text-foreground">အခြားဖတ်ရှုရန် သတင်းများ</h3>
+                    <h3 class="text-2xl sm:text-3xl font-bold mb-8 border-l-[6px] border-primary pl-5 text-foreground">Other News to Read</h3>
                     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     ${otherPosts.map(p => {
                     const excerpt = String(p.detail).length > 100 ? String(p.detail).substring(0, 100) + '...' : p.detail;
@@ -721,7 +738,7 @@
           </button>
           
           <button onclick="closeNewsDetail()" class="mb-12 inline-flex items-center gap-2 text-sm font-bold text-foreground hover:text-primary transition-colors px-4 py-2 rounded-lg bg-card border border-border shadow-sm group">
-            <i data-lucide="arrow-left" class="h-4 w-4 group-hover:-translate-x-1 transition-transform"></i> သတင်းများသို့ ပြန်သွားရန်
+            <i data-lucide="arrow-left" class="h-4 w-4 group-hover:-translate-x-1 transition-transform"></i> Back to News
           </button>
           
           <article class="bg-card rounded-3xl border border-border p-8 sm:p-12 shadow-2xl">
@@ -744,7 +761,7 @@
             
             <div class="mt-16 pt-12 border-t border-border flex justify-center">
               <button onclick="closeNewsDetail()" class="inline-flex items-center gap-2 text-lg font-bold text-primary-foreground bg-primary hover:bg-primary/90 transition-all px-10 py-4 rounded-xl shadow-lg hover:shadow-primary/25 group">
-                <i data-lucide="arrow-left" class="h-5 w-5 group-hover:-translate-x-1 transition-transform"></i> သတင်းများသို့ ပြန်သွားရန်
+                <i data-lucide="arrow-left" class="h-5 w-5 group-hover:-translate-x-1 transition-transform"></i> Back to News
               </button>
             </div>
           </article>
@@ -768,7 +785,7 @@
             if (loader) {
                 setTimeout(() => {
                     loader.classList.add('fade-out');
-                }, 500);
+                }, 3000); // Wait for one full cycle
             }
         });
 
@@ -780,7 +797,10 @@
                     revealObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
 
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));

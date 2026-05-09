@@ -40,7 +40,7 @@
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="icon" href="./img/Mr Linuxer Logo..png">
+  <link rel="icon" href="./img/mrlinuxer.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap"
@@ -199,25 +199,42 @@
       visibility: hidden;
     }
 
-    .loader-logo {
-      width: 80px;
-      height: auto;
-      animation: pulse 1.5s infinite ease-in-out;
-      margin-bottom: 20px;
+    .loader-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 160px;
+      height: 160px;
+      background: #000; /* Deep black circle */
+      border-radius: 50%;
+      margin-bottom: 30px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     }
 
-    @keyframes pulse {
+    .loader-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      clip-path: circle(44%); /* Hide the original yellow ring from PNG */
+      z-index: 10;
+    }
 
-      0%,
-      100% {
-        transform: scale(0.95);
-        opacity: 0.8;
-      }
+    .loader-ring {
+      position: absolute;
+      width: 195px;
+      height: 195px;
+      border: 15px solid #fbbf24; /* Extra thick yellow */
+      border-top-color: transparent; /* The distinct gap */
+      border-radius: 50%;
+      animation: spin-pause 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      z-index: 5;
+    }
 
-      50% {
-        transform: scale(1.05);
-        opacity: 1;
-      }
+    @keyframes spin-pause {
+      0% { transform: rotate(0deg); }
+      40% { transform: rotate(315deg); } /* One full turn in 1.2s */
+      100% { transform: rotate(320deg); } /* Wait for 1.8s */
     }
 
     /* Typography Polish */
@@ -311,9 +328,9 @@
 <body class="bg-background text-foreground selection:bg-primary/20 selection:text-primary">
   <!-- Page Loader -->
   <div id="loader-wrapper">
-    <img src="./img/Mr Linuxer Logo..png" alt="Loading..." class="loader-logo">
-    <div class="w-48 h-1 bg-secondary rounded-full overflow-hidden">
-      <div class="h-full bg-primary animate-[marquee_2s_linear_infinite] w-1/2 rounded-full"></div>
+    <div class="loader-container">
+      <div class="loader-ring"></div>
+      <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="loader-logo">
     </div>
   </div>
 
@@ -324,7 +341,7 @@
       <div class="flex h-16 items-center justify-between">
         <!-- Logo -->
         <a href="index.html" class="flex items-center gap-2">
-          <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
+          <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
         </a>
 
         <!-- Desktop Navigation -->
@@ -483,20 +500,20 @@
         <!-- Block 1 -->
         <div
           class="flex items-center gap-6 sm:gap-10 pr-6 sm:pr-10 w-max text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-wider leading-none">
-          <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">Cybersecurity</span>
           <i data-lucide="shield-check" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-
+          <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">Cybersecurity</span>
+          
+           <i data-lucide="cloud" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
           <span class="text-stroke-effect cursor-default inline-block whitespace-nowrap">Cloud Computing</span>
-          <i data-lucide="cloud" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-
+         
+           <i data-lucide="server" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
           <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">IT Management</span>
-          <i data-lucide="server" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
-
-          <span class="text-stroke-effect cursor-default inline-block whitespace-nowrap">Creative Design</span>
+         
           <i data-lucide="pen-tool" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
+          <span class="text-stroke-effect cursor-default inline-block whitespace-nowrap">Creative Design</span>
 
-          <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">Customer Service</span>
           <i data-lucide="headset" class="h-8 w-8 sm:h-12 sm:w-12 text-primary/40 shrink-0"></i>
+          <span class="text-solid-effect cursor-default inline-block whitespace-nowrap">Customer Service</span>
         </div>
 
         <!-- Block 2 (Duplicate for Seamless Scroll) -->
@@ -1102,7 +1119,7 @@
         <!-- Brand Column -->
         <div class="col-span-2 md:col-span-1">
           <a href="index.html" class="flex items-center gap-2">
-            <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
+            <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
           </a>
           <p class="mt-5 text-sm text-background/70 mb-6 leading-relaxed">
             Driven by Code, Powered by Teamwork. Your trusted partner for cybersecurity and IT solutions.
@@ -1215,9 +1232,10 @@
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader-wrapper');
       if (loader) {
+        // Ensure at least one full cycle (3s) even if page loads instantly
         setTimeout(() => {
           loader.classList.add('fade-out');
-        }, 500); // Small delay for smoothness
+        }, 3000); 
       }
     });
 

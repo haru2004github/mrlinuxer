@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,10 @@
     gtag('config', 'G-Y7SVY5C21T');
   </script>
   <title>Our Services | Mr.Linuxer - Cybersecurity & IT Solutions</title>
-  <meta name="description" content="Explore Mr.Linuxer's comprehensive IT services including professional cybersecurity audits, custom web & mobile development, and AI-driven business solutions.">
-  <meta name="keywords" content="cybersecurity services, web development services, mobile app development Myanmar, AI automation, IT consulting Nay Pyi Taw">
+  <meta name="description"
+    content="Explore Mr.Linuxer's comprehensive IT services including professional cybersecurity audits, custom web & mobile development, and AI-driven business solutions.">
+  <meta name="keywords"
+    content="cybersecurity services, web development services, mobile app development Myanmar, AI automation, IT consulting Nay Pyi Taw">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://mrlinuxer.com/services.html">
 
@@ -22,22 +25,26 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mrlinuxer.com/services.html">
   <meta property="og:title" content="Our Services | Mr.Linuxer - Cybersecurity & IT Solutions">
-  <meta property="og:description" content="Empowering your business with robust cybersecurity, intelligent software, and modern infrastructure.">
+  <meta property="og:description"
+    content="Empowering your business with robust cybersecurity, intelligent software, and modern infrastructure.">
   <meta property="og:image" content="https://mrlinuxer.com/img/hero.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://mrlinuxer.com/services.html">
   <meta property="twitter:title" content="Our Services | Mr.Linuxer - Cybersecurity & IT Solutions">
-  <meta property="twitter:description" content="Empowering your business with robust cybersecurity, intelligent software, and modern infrastructure.">
+  <meta property="twitter:description"
+    content="Empowering your business with robust cybersecurity, intelligent software, and modern infrastructure.">
   <meta property="twitter:image" content="https://mrlinuxer.com/img/hero.png">
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="icon" href="./img/Mr Linuxer Logo..png">
+  <link rel="icon" href="./img/mrlinuxer.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Padauk:wght@400;700&display=swap"
+    rel="stylesheet">
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -65,42 +72,77 @@
       },
     }
   </script>
-  
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background-color: #fafafa; color: #171717; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafafa;
+      color: #171717;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
     /* Smooth scrolling */
-    html { scroll-behavior: smooth; }
-    
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* Mobile menu transition */
-    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-    .mobile-menu.open { max-height: 400px; }
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .mobile-menu.open {
+      max-height: 400px;
+    }
 
     /* Text Justification */
-    .text-justify-my { text-align: justify; text-justify: inter-word; word-break: break-word; hyphens: auto; }
+    .text-justify-my {
+      text-align: justify;
+      text-justify: inter-word;
+      word-break: break-word;
+      hyphens: auto;
+    }
 
     /* Grand Hero Background */
     .hero-pattern {
-      background-image: radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.1) 0, transparent 50%), 
-                        radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.05) 0, transparent 50%);
+      background-image: radial-gradient(circle at 100% 100%, rgba(220, 38, 38, 0.1) 0, transparent 50%),
+        radial-gradient(circle at 0% 0%, rgba(220, 38, 38, 0.05) 0, transparent 50%);
     }
-    
+
     /* Floating Animation for Header Icons */
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
+
     .animate-float {
       animation: float 4s ease-in-out infinite;
     }
+
     .animate-float-delayed {
       animation: float 4s ease-in-out infinite 2s;
     }
+
     /* Scroll Reveal Animation */
     .reveal {
       opacity: 0;
@@ -108,6 +150,7 @@
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       will-change: opacity, transform;
     }
+
     .reveal.active {
       opacity: 1;
       transform: translateY(0);
@@ -128,56 +171,48 @@
       z-index: 9999;
       transition: opacity 0.6s ease, visibility 0.6s ease;
     }
+
     #loader-wrapper.fade-out {
       opacity: 0;
       visibility: hidden;
     }
-    .loader-logo {
-      width: 80px;
-      height: auto;
-      animation: pulse 1.5s infinite ease-in-out;
-      margin-bottom: 20px;
-    }
-    /* Global Loading Effect */
-    #loader-wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #ffffff;
+
+    .loader-container {
+      position: relative;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 9999;
-      transition: opacity 0.6s ease, visibility 0.6s ease;
-    }
-
-    #loader-wrapper.fade-out {
-      opacity: 0;
-      visibility: hidden;
+      width: 160px;
+      height: 160px;
+      background: #000; /* Deep black circle */
+      border-radius: 50%;
+      margin-bottom: 30px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     }
 
     .loader-logo {
-      width: 80px;
-      height: auto;
-      animation: pulse 1.5s infinite ease-in-out;
-      margin-bottom: 20px;
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      clip-path: circle(44%); /* Hide the original yellow ring from PNG */
+      z-index: 10;
     }
 
-    @keyframes pulse {
+    .loader-ring {
+      position: absolute;
+      width: 195px;
+      height: 195px;
+      border: 15px solid #fbbf24; /* Extra thick yellow */
+      border-top-color: transparent; /* The distinct gap */
+      border-radius: 50%;
+      animation: spin-pause 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      z-index: 5;
+    }
 
-      0%,
-      100% {
-        transform: scale(0.95);
-        opacity: 0.8;
-      }
-
-      50% {
-        transform: scale(1.05);
-        opacity: 1;
-      }
+    @keyframes spin-pause {
+      0% { transform: rotate(0deg); }
+      40% { transform: rotate(315deg); } /* One full turn in 1.2s */
+      100% { transform: rotate(320deg); } /* Wait for 1.8s */
     }
 
     /* Typography Polish */
@@ -186,47 +221,59 @@
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
-    p { line-height: 1.75; }
+
+    p {
+      line-height: 1.75;
+    }
   </style>
 </head>
+
 <body class="bg-background text-foreground selection:bg-primary/20 selection:text-primary">
   <!-- Loading Screen -->
   <div id="loader-wrapper">
-    <img src="./img/Mr Linuxer Logo..png" alt="Mr. Linuxer Logo" class="loader-logo">
-    <div class="w-48 h-1.5 bg-secondary rounded-full overflow-hidden">
-      <div class="h-full bg-primary animate-[loading_2s_ease-in-out_infinite] origin-left"></div>
+    <div class="loader-container">
+      <div class="loader-ring"></div>
+      <img src="./img/Mr Linuxer Logo..png" alt="Mr. Linuxer Logo" class="loader-logo">
     </div>
   </div>
 
   <!-- Header -->
- <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
+  <header id="header"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <!-- Logo -->
         <a href="index.html" class="flex items-center gap-2">
-          <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
+          <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
         </a>
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Home</a>
-          <a href="about.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">About</a>
+          <a href="index.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Home</a>
+          <a href="about.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">About</a>
           <a href="services.html" class="text-sm font-medium text-primary transition-colors">Services</a>
-          <a href="news.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">News</a>
-          <a href="blog.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Blogs</a>
-          <a href="contact.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Contact</a>
+          <a href="news.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">News</a>
+          <a href="blog.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Blogs</a>
+          <a href="contact.html"
+            class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Contact</a>
         </nav>
 
         <!-- Right Side Actions -->
         <div class="flex items-center gap-4">
           <!-- CTA Button -->
-          <a href="contact.html" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
+          <a href="contact.html"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
             Get Started
             <i data-lucide="arrow-right" class="h-4 w-4"></i>
           </a>
 
           <!-- Mobile Menu Button -->
-          <button id="mobileMenuBtn" class="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors">
+          <button id="mobileMenuBtn"
+            class="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors">
             <i data-lucide="menu" class="h-6 w-6" id="menuIcon"></i>
           </button>
         </div>
@@ -235,15 +282,22 @@
       <!-- Mobile Navigation -->
       <div id="mobileMenu" class="mobile-menu md:hidden">
         <nav class="flex flex-col gap-2 py-4 border-t border-border">
-          <a href="index.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
-          <a href="about.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
-          <a href="services.html" class="px-4 py-2 text-sm font-medium text-primary bg-secondary rounded-lg transition-colors">Services</a>
-          <a href="news.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
-          <a href="blog.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
-          <a href="contact.html" class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Contact</a>
+          <a href="index.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Home</a>
+          <a href="about.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">About</a>
+          <a href="services.html"
+            class="px-4 py-2 text-sm font-medium text-primary bg-secondary rounded-lg transition-colors">Services</a>
+          <a href="news.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">News</a>
+          <a href="blog.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Blogs</a>
+          <a href="contact.html"
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-secondary rounded-lg transition-colors">Contact</a>
 
           <div class="px-4 pt-2 border-t border-border mt-2">
-            <a href="contact.html" class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
+            <a href="contact.html"
+              class="flex items-center justify-center gap-2 w-full px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors">
               Get Started
               <i data-lucide="arrow-right" class="h-4 w-4"></i>
             </a>
@@ -254,9 +308,12 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-foreground text-background overflow-hidden hero-pattern reveal">
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 40px 40px;"></div>
-    
+  <section
+    class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-foreground text-background overflow-hidden hero-pattern reveal">
+    <div class="absolute inset-0 opacity-[0.03]"
+      style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+
     <!-- Floating Icons -->
     <div class="absolute top-1/4 left-1/4 text-primary/20 animate-float hidden lg:block">
       <i data-lucide="layers" class="h-16 w-16"></i>
@@ -266,18 +323,21 @@
     </div>
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-8 backdrop-blur-sm">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-8 backdrop-blur-sm">
         <i data-lucide="zap" class="h-4 w-4 text-primary"></i>
         <span class="text-sm font-medium tracking-widest uppercase text-primary-foreground">What We Offer</span>
       </div>
-      
+
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 text-balance">
         Comprehensive<br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">IT & Digital Solutions</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400">IT & Digital
+          Solutions</span>
       </h1>
-      
+
       <p class="max-w-2xl mx-auto text-base sm:text-lg text-background/70 mb-10 leading-relaxed text-pretty">
-        Empowering your business with robust cybersecurity, intelligent software, and modern infrastructure designed for scale and resilience.
+        Empowering your business with robust cybersecurity, intelligent software, and modern infrastructure designed for
+        scale and resilience.
       </p>
     </div>
   </section>
@@ -290,24 +350,33 @@
     </div>
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-      
+
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        
+
         <!-- Service 1: Cybersecurity -->
-        <div class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
-          <div class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0"></div>
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out"></div>
-          
+        <div
+          class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
+          <div
+            class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0">
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out">
+          </div>
+
           <div class="relative z-10 flex flex-col h-full">
-            <div class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
-              <i data-lucide="shield-check" class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
+              <i data-lucide="shield-check"
+                class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
             </div>
-            
-            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">Cybersecurity</h3>
+
+            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+              Cybersecurity</h3>
             <p class="text-sm text-muted-foreground mb-6 leading-relaxed flex-grow text-justify-my">
-              Protect your digital assets with our military-grade security solutions. We identify vulnerabilities before attackers do.
+              Protect your digital assets with our military-grade security solutions. We identify vulnerabilities before
+              attackers do.
             </p>
-            
+
             <ul class="space-y-3 text-sm text-muted-foreground mt-auto">
               <li class="flex items-start gap-3">
                 <i data-lucide="check" class="h-4 w-4 text-primary mt-0.5"></i>
@@ -326,20 +395,29 @@
         </div>
 
         <!-- Service 2: Web & Mobile Dev -->
-        <div class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
-          <div class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0"></div>
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out"></div>
-          
+        <div
+          class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
+          <div
+            class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0">
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out">
+          </div>
+
           <div class="relative z-10 flex flex-col h-full">
-            <div class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
-              <i data-lucide="monitor-smartphone" class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
+              <i data-lucide="monitor-smartphone"
+                class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
             </div>
-            
-            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">Web & Mobile Apps</h3>
+
+            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+              Web & Mobile Apps</h3>
             <p class="text-sm text-muted-foreground mb-6 leading-relaxed flex-grow text-justify-my">
-              Scalable, high-performance applications built with modern frameworks to deliver exceptional user experiences.
+              Scalable, high-performance applications built with modern frameworks to deliver exceptional user
+              experiences.
             </p>
-            
+
             <ul class="space-y-3 text-sm text-muted-foreground mt-auto">
               <li class="flex items-start gap-3">
                 <i data-lucide="check" class="h-4 w-4 text-primary mt-0.5"></i>
@@ -358,20 +436,29 @@
         </div>
 
         <!-- Service 3: Cloud Computing -->
-        <div class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
-          <div class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0"></div>
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out"></div>
-          
+        <div
+          class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
+          <div
+            class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0">
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out">
+          </div>
+
           <div class="relative z-10 flex flex-col h-full">
-            <div class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
-              <i data-lucide="cloud-cog" class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
+              <i data-lucide="cloud-cog"
+                class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
             </div>
-            
-            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">Cloud Computing</h3>
+
+            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+              Cloud Computing</h3>
             <p class="text-sm text-muted-foreground mb-6 leading-relaxed flex-grow text-justify-my">
-              Seamlessly migrate and manage your infrastructure in the cloud for maximum scalability, speed, and cost-efficiency.
+              Seamlessly migrate and manage your infrastructure in the cloud for maximum scalability, speed, and
+              cost-efficiency.
             </p>
-            
+
             <ul class="space-y-3 text-sm text-muted-foreground mt-auto">
               <li class="flex items-start gap-3">
                 <i data-lucide="check" class="h-4 w-4 text-primary mt-0.5"></i>
@@ -390,20 +477,28 @@
         </div>
 
         <!-- Service 4: AI Solutions -->
-        <div class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
-          <div class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0"></div>
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out"></div>
-          
+        <div
+          class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
+          <div
+            class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0">
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out">
+          </div>
+
           <div class="relative z-10 flex flex-col h-full">
-            <div class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
-              <i data-lucide="brain" class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
+              <i data-lucide="brain"
+                class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
             </div>
-            
-            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">AI & Automation</h3>
+
+            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+              AI & Automation</h3>
             <p class="text-sm text-muted-foreground mb-6 leading-relaxed flex-grow text-justify-my">
               Transform your business operations with intelligent automation and data-driven machine learning models.
             </p>
-            
+
             <ul class="space-y-3 text-sm text-muted-foreground mt-auto">
               <li class="flex items-start gap-3">
                 <i data-lucide="check" class="h-4 w-4 text-primary mt-0.5"></i>
@@ -422,20 +517,28 @@
         </div>
 
         <!-- Service 5: IT Management -->
-        <div class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
-          <div class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0"></div>
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out"></div>
-          
+        <div
+          class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
+          <div
+            class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0">
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out">
+          </div>
+
           <div class="relative z-10 flex flex-col h-full">
-            <div class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
-              <i data-lucide="server" class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
+              <i data-lucide="server"
+                class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
             </div>
-            
-            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">IT Management</h3>
+
+            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+              IT Management</h3>
             <p class="text-sm text-muted-foreground mb-6 leading-relaxed flex-grow text-justify-my">
               Reliable maintenance, networking, and support services to keep your daily operations running smoothly.
             </p>
-            
+
             <ul class="space-y-3 text-sm text-muted-foreground mt-auto">
               <li class="flex items-start gap-3">
                 <i data-lucide="check" class="h-4 w-4 text-primary mt-0.5"></i>
@@ -454,20 +557,28 @@
         </div>
 
         <!-- Service 6: Creative Design -->
-        <div class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
-          <div class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0"></div>
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out"></div>
-          
+        <div
+          class="group bg-card/90 backdrop-blur-xl rounded-[2rem] p-8 border border-border hover:border-primary/40 shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(220,38,38,0.15)] transition-all duration-700 hover:-translate-y-2 relative overflow-hidden flex flex-col h-full cursor-pointer">
+          <div
+            class="absolute -right-20 -top-20 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-[40px] group-hover:scale-150 transition-transform duration-1000 ease-out z-0">
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-in-out">
+          </div>
+
           <div class="relative z-10 flex flex-col h-full">
-            <div class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
-              <i data-lucide="pen-tool" class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm">
+              <i data-lucide="pen-tool"
+                class="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors duration-500"></i>
             </div>
-            
-            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">Creative Design</h3>
+
+            <h3 class="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+              Creative Design</h3>
             <p class="text-sm text-muted-foreground mb-6 leading-relaxed flex-grow text-justify-my">
               Visually stunning and user-centric designs that elevate your brand identity and digital presence.
             </p>
-            
+
             <ul class="space-y-3 text-sm text-muted-foreground mt-auto">
               <li class="flex items-start gap-3">
                 <i data-lucide="check" class="h-4 w-4 text-primary mt-0.5"></i>
@@ -496,8 +607,10 @@
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
           <span class="text-sm font-medium text-primary uppercase tracking-widest">How We Work</span>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">Our Streamlined <span class="text-primary">Process</span></h2>
-        <p class="text-muted-foreground">From initial consultation to final deployment, we ensure a transparent, secure, and efficient project lifecycle.</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-4">Our Streamlined <span
+            class="text-primary">Process</span></h2>
+        <p class="text-muted-foreground">From initial consultation to final deployment, we ensure a transparent, secure,
+          and efficient project lifecycle.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -506,29 +619,40 @@
 
         <!-- Step 1 -->
         <div class="relative z-10 text-center group">
-          <div class="w-20 h-20 mx-auto bg-card border-4 border-secondary rounded-full flex items-center justify-center shadow-md mb-6 group-hover:border-primary transition-colors duration-500 relative">
+          <div
+            class="w-20 h-20 mx-auto bg-card border-4 border-secondary rounded-full flex items-center justify-center shadow-md mb-6 group-hover:border-primary transition-colors duration-500 relative">
             <span class="text-2xl font-black text-muted-foreground group-hover:text-primary transition-colors">1</span>
-            <div class="absolute inset-0 rounded-full border border-primary/0 group-hover:border-primary/50 scale-150 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"></div>
+            <div
+              class="absolute inset-0 rounded-full border border-primary/0 group-hover:border-primary/50 scale-150 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+            </div>
           </div>
           <h4 class="text-lg font-bold text-foreground mb-2">Discovery</h4>
-          <p class="text-sm text-muted-foreground">Understanding your needs, analyzing risks, and defining project scope.</p>
+          <p class="text-sm text-muted-foreground">Understanding your needs, analyzing risks, and defining project
+            scope.</p>
         </div>
 
         <!-- Step 2 -->
         <div class="relative z-10 text-center group">
-          <div class="w-20 h-20 mx-auto bg-card border-4 border-secondary rounded-full flex items-center justify-center shadow-md mb-6 group-hover:border-primary transition-colors duration-500 relative">
+          <div
+            class="w-20 h-20 mx-auto bg-card border-4 border-secondary rounded-full flex items-center justify-center shadow-md mb-6 group-hover:border-primary transition-colors duration-500 relative">
             <span class="text-2xl font-black text-muted-foreground group-hover:text-primary transition-colors">2</span>
-            <div class="absolute inset-0 rounded-full border border-primary/0 group-hover:border-primary/50 scale-150 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"></div>
+            <div
+              class="absolute inset-0 rounded-full border border-primary/0 group-hover:border-primary/50 scale-150 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+            </div>
           </div>
           <h4 class="text-lg font-bold text-foreground mb-2">Planning & Design</h4>
-          <p class="text-sm text-muted-foreground">Architecting secure solutions and creating intuitive UI/UX designs.</p>
+          <p class="text-sm text-muted-foreground">Architecting secure solutions and creating intuitive UI/UX designs.
+          </p>
         </div>
 
         <!-- Step 3 -->
         <div class="relative z-10 text-center group">
-          <div class="w-20 h-20 mx-auto bg-card border-4 border-secondary rounded-full flex items-center justify-center shadow-md mb-6 group-hover:border-primary transition-colors duration-500 relative">
+          <div
+            class="w-20 h-20 mx-auto bg-card border-4 border-secondary rounded-full flex items-center justify-center shadow-md mb-6 group-hover:border-primary transition-colors duration-500 relative">
             <span class="text-2xl font-black text-muted-foreground group-hover:text-primary transition-colors">3</span>
-            <div class="absolute inset-0 rounded-full border border-primary/0 group-hover:border-primary/50 scale-150 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"></div>
+            <div
+              class="absolute inset-0 rounded-full border border-primary/0 group-hover:border-primary/50 scale-150 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+            </div>
           </div>
           <h4 class="text-lg font-bold text-foreground mb-2">Development</h4>
           <p class="text-sm text-muted-foreground">Agile coding, rigorous security testing, and system integration.</p>
@@ -536,9 +660,12 @@
 
         <!-- Step 4 -->
         <div class="relative z-10 text-center group">
-          <div class="w-20 h-20 mx-auto bg-card border-4 border-secondary rounded-full flex items-center justify-center shadow-md mb-6 group-hover:border-primary transition-colors duration-500 relative">
+          <div
+            class="w-20 h-20 mx-auto bg-card border-4 border-secondary rounded-full flex items-center justify-center shadow-md mb-6 group-hover:border-primary transition-colors duration-500 relative">
             <span class="text-2xl font-black text-muted-foreground group-hover:text-primary transition-colors">4</span>
-            <div class="absolute inset-0 rounded-full border border-primary/0 group-hover:border-primary/50 scale-150 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"></div>
+            <div
+              class="absolute inset-0 rounded-full border border-primary/0 group-hover:border-primary/50 scale-150 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+            </div>
           </div>
           <h4 class="text-lg font-bold text-foreground mb-2">Deployment</h4>
           <p class="text-sm text-muted-foreground">Secure launch, continuous monitoring, and ongoing support.</p>
@@ -551,8 +678,10 @@
   <section class="py-24 bg-background relative overflow-hidden text-center reveal">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 relative z-10">
       <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6 text-balance">Ready to Transform Your Ideas?</h2>
-      <p class="text-base sm:text-lg text-muted-foreground mb-10">Choose the right services to scale and secure your digital presence.</p>
-      <a href="contact.html" class="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 hover:-translate-y-1">
+      <p class="text-base sm:text-lg text-muted-foreground mb-10">Choose the right services to scale and secure your
+        digital presence.</p>
+      <a href="contact.html"
+        class="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25 hover:-translate-y-1">
         Request a Consultation
         <i data-lucide="arrow-right" class="h-5 w-5"></i>
       </a>
@@ -566,14 +695,19 @@
         <!-- Brand Column -->
         <div class="col-span-2 md:col-span-1">
           <a href="index.html" class="flex items-center gap-2">
-          <img src="./img/Mr Linuxer Logo..png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
-        </a>
+            <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
+          </a>
           <p class="mt-5 text-sm text-background/70 mb-6 leading-relaxed">
             Driven by Code, Powered by Teamwork. Your trusted partner for cybersecurity and IT solutions.
           </p>
           <div class="flex gap-3">
-            <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-background/10 border border-background/20 flex items-center justify-center text-background/70 hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors" aria-label="Facebook">
-              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <a href="https://www.facebook.com/MrLinux3r" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-lg bg-background/10 border border-background/20 flex items-center justify-center text-background/70 hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-colors"
+              aria-label="Facebook">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
             </a>
           </div>
         </div>
@@ -582,12 +716,18 @@
         <div>
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Quick Links</h3>
           <ul class="space-y-3">
-            <li><a href="index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a></li>
-            <li><a href="about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About Us</a></li>
-            <li><a href="services.html" class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
-            <li><a href="news.html" class="text-sm text-background/70 hover:text-primary transition-colors">News</a></li>
-            <li><a href="blog.html" class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a></li>
-            <li><a href="contact.html" class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
+            <li><a href="index.html" class="text-sm text-background/70 hover:text-primary transition-colors">Home</a>
+            </li>
+            <li><a href="about.html" class="text-sm text-background/70 hover:text-primary transition-colors">About
+                Us</a></li>
+            <li><a href="services.html"
+                class="text-sm text-background/70 hover:text-primary transition-colors">Services</a></li>
+            <li><a href="news.html" class="text-sm text-background/70 hover:text-primary transition-colors">News</a>
+            </li>
+            <li><a href="blog.html" class="text-sm text-background/70 hover:text-primary transition-colors">Blogs</a>
+            </li>
+            <li><a href="contact.html"
+                class="text-sm text-background/70 hover:text-primary transition-colors">Contact</a></li>
           </ul>
         </div>
 
@@ -595,11 +735,18 @@
         <div>
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Services</h3>
           <ul class="space-y-3">
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Web Development</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Mobile Apps</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Cybersecurity</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">AI Solutions</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Consulting</span></li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Web
+                Development</span></li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Mobile
+                Apps</span></li>
+            <li><span
+                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Cybersecurity</span>
+            </li>
+            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">AI
+                Solutions</span></li>
+            <li><span
+                class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Consulting</span>
+            </li>
           </ul>
         </div>
 
@@ -608,13 +755,15 @@
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Contact</h3>
           <ul class="space-y-4">
             <li>
-              <a href="mailto:hello@mrlinuxer.net" class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
+              <a href="mailto:hello@mrlinuxer.net"
+                class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
                 <i data-lucide="mail" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
                 <span>hello@mrlinuxer.net</span>
               </a>
             </li>
             <li>
-              <a href="tel:+959260438525" class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
+              <a href="tel:+959260438525"
+                class="flex items-start gap-3 text-sm text-background/70 hover:text-primary transition-colors">
                 <i data-lucide="phone" class="h-4 w-4 mt-0.5 flex-shrink-0"></i>
                 <span>+(95) 9260438525</span>
               </a>
@@ -657,19 +806,25 @@
           revealObserver.unobserve(entry.target); // Trigger only once
         }
       });
-    }, { threshold: 0.1 });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
 
-    // Page Loader Logic
+    // Global Loader
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader-wrapper');
-      setTimeout(() => {
-        loader.classList.add('fade-out');
-        // Start observing after loader is gone
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-      }, 800);
+      if (loader) {
+        // Ensure at least one full cycle (3s) even if page loads instantly
+        setTimeout(() => {
+          loader.classList.add('fade-out');
+        }, 3000); 
+      }
     });
 
     document.addEventListener('DOMContentLoaded', () => {
+      // Start observing scroll reveal elements
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
       lucide.createIcons();
 
       const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -698,4 +853,5 @@
     });
   </script>
 </body>
+
 </html>
