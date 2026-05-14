@@ -95,9 +95,7 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Global Loading Effect */
-    #loader-wrapper {
+ #loader-wrapper {
       position: fixed;
       top: 0;
       left: 0;
@@ -122,8 +120,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
       background: #000; /* Deep black circle */
       border-radius: 50%;
       margin-bottom: 30px;
@@ -131,8 +129,8 @@
     }
 
     .loader-logo {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
       object-fit: contain;
       clip-path: circle(44%); /* Hide the original yellow ring from PNG */
       z-index: 10;
@@ -140,8 +138,8 @@
 
     .loader-ring {
       position: absolute;
-      width: 195px;
-      height: 195px;
+      width: 165px;
+      height: 165px;
       border: 15px solid #fbbf24; /* Extra thick yellow */
       border-top-color: transparent; /* The distinct gap */
       border-radius: 50%;
@@ -191,12 +189,12 @@
   </div>
 
   <!-- Header (Exact Match with Home Page) -->
- <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border">
+   <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md border-b border-border reveal">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <!-- Logo -->
         <a href="index.html" class="flex items-center gap-2">
-          <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo" class="h-10 sm:h-12 w-auto object-contain">
+          <img src="./img/mrlinuxer.png" alt="Mr.Linuxer Logo" class="h-10 sm:h-14 w-auto object-contain">
         </a>
 
         <!-- Desktop Navigation -->
@@ -424,11 +422,11 @@
         <div>
           <h3 class="text-sm font-semibold text-background uppercase tracking-wider mb-4">Services</h3>
           <ul class="space-y-3">
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Web Development</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Mobile Apps</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Cybersecurity</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">AI Solutions</span></li>
-            <li><span class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Consulting</span></li>
+            <li><a href="services.html" class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Web Development</a></li></li>
+            <li><a href="services.html" class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Mobile Apps</a></li></li>
+            <li><a href="services.html" class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Cybersecurity</a></li></li>
+            <li><a href="services.html" class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">AI Solutions</a></li></li>
+            <li><a href="services.html" class="text-sm text-background/70 hover:text-primary transition-colors cursor-pointer">Consulting</a></li></li>
           </ul>
         </div>
 
